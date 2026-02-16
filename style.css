@@ -4,6 +4,7 @@
     --gold-accent: #c5a059;
     --bg-beige: #fdfaf5;
     --text-dark: #1a1a1a;
+    --m-red: #7a1f26; /* Loun l-M */
 }
 
 * {
@@ -17,6 +18,7 @@ body {
     background-color: var(--bg-beige);
     color: var(--text-dark);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 .container {
@@ -25,7 +27,7 @@ body {
     padding: 80px 20px;
 }
 
-/* 2. Logo Styling (Modern Moroccan Colors) */
+/* 2. Logo Styling */
 .logo-container {
     display: flex;
     align-items: center;
@@ -58,7 +60,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .nav-links {
@@ -72,17 +74,24 @@ body {
     color: var(--text-dark);
     font-weight: 500;
     font-size: 14px;
+    transition: 0.3s;
 }
+
+.nav-links a:hover { color: var(--primary-green); }
 
 .btn-outline {
     border: 1px solid var(--text-dark);
     background: transparent;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 25px;
     cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
-/* 4. Hero Section m3a Background Blur */
+.btn-outline:hover { background: var(--text-dark); color: white; }
+
+/* 4. Hero Section */
 .hero {
     position: relative;
     height: 85vh;
@@ -91,7 +100,6 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    overflow: hidden;
 }
 
 .hero::before {
@@ -102,61 +110,40 @@ body {
     background-size: cover;
     background-position: center;
     filter: blur(4px);
-    background-color: rgba(26, 38, 28, 0.6); /* Overlay bach ktaba tban */
-    background-blend-mode: overlay;
     z-index: -1;
-    transform: scale(1.1);
 }
 
-.hero-content {
-    position: relative;
-    z-index: 1;
-    padding: 0 15%;
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(26, 38, 28, 0.65); /* Overlay */
+    z-index: -1;
 }
+
+.hero-content { padding: 0 15%; }
 
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 5vw, 54px);
     margin-bottom: 25px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
 
-.hero-btns {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-}
+.hero-btns { display: flex; gap: 20px; justify-content: center; margin-top: 30px; }
 
-/* 5. Buttons */
 .btn-white {
-    background: white;
-    color: var(--primary-green);
-    border: none;
-    padding: 15px 35px;
-    border-radius: 30px;
-    font-weight: 600;
-    cursor: pointer;
+    background: white; color: var(--primary-green); border: none;
+    padding: 15px 35px; border-radius: 30px; font-weight: 600; cursor: pointer;
 }
 
 .btn-transparent {
-    background: transparent;
-    color: white;
-    border: 1px solid white;
-    padding: 15px 35px;
-    border-radius: 30px;
-    cursor: pointer;
+    background: transparent; color: white; border: 1px solid white;
+    padding: 15px 35px; border-radius: 30px; cursor: pointer;
 }
 
-/* 6. Categories Grid */
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.section-title h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-}
+/* 5. Categories */
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-family: 'Playfair Display', serif; font-size: 36px; }
 
 .category-grid {
     display: grid;
@@ -165,224 +152,89 @@ body {
 }
 
 .cat-card {
-    background: white;
-    padding: 20px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    background: white; padding: 20px; border-radius: 15px;
+    text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
 }
 
-.img-container {
-    height: 250px;
-    overflow: hidden;
-    border-radius: 10px;
-    margin-bottom: 20px;
+.img-container { height: 250px; overflow: hidden; border-radius: 10px; margin-bottom: 20px; }
+.img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.cat-card:hover img { transform: scale(1.1); }
+
+/* 6. About Section */
+.about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+    align-items: center; background: white; padding: 50px; border-radius: 30px;
 }
 
-.img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
+.about-text h2 { font-family: 'Playfair Display', serif; font-size: 38px; color: var(--primary-green); margin-bottom: 20px; }
+.about-list { list-style: none; margin-top: 20px; }
+.about-list li { margin-bottom: 10px; font-weight: 600; color: var(--primary-green); }
+.about-image img { width: 100%; border-radius: 20px; box-shadow: 15px 15px 0px var(--primary-green); }
 
-.cat-card:hover img {
-    transform: scale(1.1);
-}
-
-/* 7. Contact Section */
-/* --- Contact Section (Update b loun l-M) --- */
-.contact {
-    padding-top: 80px;
-    padding-bottom: 80px;
-}
-
+/* 7. Contact Section (FIXED) */
 .contact-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background: #7a1f26; /* Nafs loun l-M (Burundy) */
+    background: var(--m-red);
     padding: 60px;
     border-radius: 30px;
-    color: white; /* Ktaba t-welli b l-byad bach t-ban */
-    box-shadow: 0 20px 40px rgba(122, 31, 38, 0.2);
-}
-
-.contact-info h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 36px;
-    margin-bottom: 20px;
     color: white;
 }
 
-.contact-info p {
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 15px;
-    font-size: 18px;
-}
-
-/* Gadina l-form bach i-ji mzyan m3a l-7mer */
 .contact-form {
     display: flex;
-    flex-direction: column; /* Hada hoa l-sir bach i-jiw wa7ed t7t wa7ed */
-    gap: 20px; /* l-msafa binat-hom */
-}, 
-.contact-form textarea {
-    padding: 15px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
-    outline: none;
+    flex-direction: column;
+    gap: 15px;
 }
 
+/* Les boites blanches kima bghiti */
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background: white; /* Redinahom b l-byad */
+    color: var(--text-dark); /* Ktaba t-welli k-7la bach t-ban */
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+}
+
+/* Bach placeholder i-ban r-madi ghamq mzyan */
 .contact-form input::placeholder, 
 .contact-form textarea::placeholder {
-    color: rgba(255, 255, 255, 0.6);
+    color: #666; 
+    opacity: 1;
 }
 
-.contact-form input:focus, 
-.contact-form textarea:focus {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: white;
-}
+.contact-form textarea { height: 120px; resize: none; }
 
-/* L-bouton dial Contact */
 .btn-green {
-    background: white; /* Bouton byad foq l-7mer kiji wa3er */
-    color: #7a1f26;
+    background: white;
+    color: var(--m-red);
     border: none;
     padding: 15px;
-    border-radius: 12px;
+    border-radius: 8px;
     cursor: pointer;
     font-weight: 700;
-    transition: 0.3s;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    transition: 0.3s;
 }
 
-.btn-green:hover {
-    background: #fdfaf5;
-    transform: translateY(-3px);
-}
+.btn-green:hover { background: #f0f0f0; transform: translateY(-2px); }
 
-/* Mobile Fix */
+/* 8. Typing & Animations */
+.typed-cursor { color: var(--a-orange); font-size: 40px; }
+#typing-text { min-height: 120px; }
+
+/* 9. Responsive */
 @media (max-width: 768px) {
-    .contact-box {
-        grid-template-columns: 1fr;
-        padding: 30px;
-    }
+    .navbar { flex-direction: column; gap: 15px; }
+    .hero h1 { font-size: 28px; }
+    .hero-btns { flex-direction: column; }
+    .about-grid, .contact-box { grid-template-columns: 1fr; padding: 25px; }
+    .about-image { order: -1; }
 }
 
-/* 8. Footer */
-footer {
-    text-align: center;
-    padding: 40px;
-    background: #eee;
-    font-size: 14px;
-}
-/* --- Responsive Design (Mobile) --- */
-
-@media (max-width: 768px) {
-    /* Navbar t-welli m-gadou f l-portable */
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px;
-    }
-
-    .nav-links {
-        gap: 15px;
-        font-size: 12px;
-    }
-
-    /* L-ktaba dial l-Hero t-welli sghira bach t-ban kamla */
-    .hero h1 {
-        font-size: 28px;
-    }
-
-    .hero-btns {
-        flex-direction: column; /* Buttons wahed foq wahed */
-        width: 100%;
-    }
-
-    /* L-Contact box t-welli fiha 1 column blast 2 */
-    .contact-box {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-
-    .category-grid {
-        grid-template-columns: 1fr; /* Tsawer dial categories wahed foq wahed */
-    }
-}
-/* --- About Section Design --- */
-.about {
-    background: #fff;
-    border-radius: 30px;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.02);
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    padding: 40px;
-}
-
-.about-text h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 38px;
-    color: var(--primary-green);
-    margin-bottom: 25px;
-}
-
-.about-text p {
-    margin-bottom: 20px;
-    font-size: 16px;
-    color: #555;
-    line-height: 1.8;
-}
-
-.about-list {
-    list-style: none;
-    margin-top: 25px;
-}
-
-.about-list li {
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: var(--primary-green);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.about-image img {
-    width: 100%;
-    border-radius: 20px;
-    box-shadow: 15px 15px 0px var(--primary-green); /* Design maghribi classy */
-}
-
-/* Mobile Fix for About */
-@media (max-width: 768px) {
-    .about-grid {
-        grid-template-columns: 1fr;
-        padding: 20px;
-    }
-    .about-image {
-        order: -1; /* Tswira tl3 hiya lwala f tilifoun */
-    }
-}
-/* Style du curseur de l'effet Typing */
-.typed-cursor {
-    color: var(--a-orange); /* Ou la couleur que tu préfères */
-    font-size: 40px;
-}
-
-#typing-text {
-    min-height: 120px; /* Évite que le reste de la page bouge pendant l'écriture */
-}
+footer { text-align: center; padding: 40px; background: #eee; font-size: 14px; margin-top: 50px; }
