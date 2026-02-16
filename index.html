@@ -3,48 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAROCAINTY | Marketplace 100% Locale & Authentique</title>
+    <title>MAROCAINTY | Marketplace 100% Authentique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar-figma">
             <div class="logo">MAROCAINTY</div>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#brands">Nos Marques</a></li>
-                <li><a href="#categories">Catégories</a></li>
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#">Boutique</a></li>
                 <li><a href="#" class="cart-btn">🛒 Panier (0)</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Le meilleur du <span>Savoir-faire Marocain</span></h1>
-            <p>Découvrez la première **Marketplace marocaine** dédiée exclusivement aux **marques locales** et à l'**artisanat marocain en ligne**.</p>
-            <button class="cta-btn">Explorer les Marques</button>
+    <section class="hero-figma">
+        <h1>Le meilleur du <span>Savoir-faire Marocain</span></h1>
+        <p>Découvrez la **Marketplace marocaine** de référence pour l'**artisanat marocain en ligne**.</p>
+    </section>
+
+    <section id="categories-section">
+        <h2 class="section-title">Parcourir par Catégories</h2>
+        <div class="categories-grid">
+            <div class="cat-card" onclick="showBrands('cosmetique')">
+                <div class="cat-img">🌿</div>
+                <h3>Cosmétique naturelle Maroc</h3>
+            </div>
+            <div class="cat-card" onclick="showBrands('artisanat')">
+                <div class="cat-img">🏺</div>
+                <h3>Artisanat & Déco</h3>
+            </div>
         </div>
     </section>
 
-    <section id="brands">
-        <h2>Nos Marques Locales Authentiques</h2>
-        <div class="brands-container">
-            <div class="brand-card">
-                <div class="brand-info">
-                    <h3>Souss Nature</h3>
-                    <p class="story">Spécialiste de la <strong>Cosmétique naturelle Maroc</strong>. Chaque goutte d'huile d'argan est pressée à la main par des coopératives locales.</p>
-                    <button class="view-products" onclick="showProducts('souss')">Voir les Produits</button>
-                </div>
-            </div>
-            <div class="brand-card">
-                <div class="brand-info">
-                    <h3>Atlas Craft</h3>
-                    <p class="story">Le <strong>Tapis marocain fait main</strong> revisité. Un mélange entre tradition berbère et design moderne.</p>
-                    <button class="view-products" onclick="showProducts('atlas')">Voir les Produits</button>
-                </div>
-            </div>
-        </div>
+    <section id="brands-display" class="hidden">
+        <h2 id="selected-cat-title">Les Marques de cette catégorie</h2>
+        <div id="brands-list"></div>
+    </section>
+
+    <section id="products-display" class="hidden">
+        <h2 id="selected-brand-title">Nos Produits Authentiques</h2>
+        <div id="products-list"></div>
     </section>
 
     <script src="script.js"></script>

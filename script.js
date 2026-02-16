@@ -1,53 +1,39 @@
-// Données des marques et produits (Authenticité garantie)
-const database = {
-    'souss': {
-        name: "Souss Nature",
-        description: "Spécialiste de la Cosmétique naturelle Maroc. Huile d'Argan 100% bio.",
-        products: [
-            { name: "Huile d'Argan Bio", price: 150, stars: 5, img: "argan.jpg" },
-            { name: "Savon Noir Premium", price: 60, stars: 4, img: "savon.jpg" }
-        ]
-    },
-    'atlas': {
-        name: "Atlas Craft",
-        description: "Tapis marocain fait main. Tradition et design moderne.",
-        products: [
-            { name: "Tapis Zanafi", price: 1200, stars: 5, img: "tapis.jpg" },
-            { name: "Coussin Artisanal", price: 250, stars: 4, img: "coussin.jpg" }
-        ]
-    }
+const data = {
+    'cosmetique': [
+        { id: 'souss', name: 'Souss Nature', story: 'Coopérative d’argan bio du Souss.', products: [{n: 'Argan', p: 150, stars: 5}] }
+    ],
+    'artisanat': [
+        { id: 'atlas', name: 'Atlas Craft', story: 'L’art du tapis Berbère transmis de mère en fille.', products: [{n: 'Tapis', p: 1200, stars: 5}] }
+    ]
 };
 
-let cartCount = 0;
-
-function showProducts(brandId) {
-    const brand = database[brandId];
-    const productsSection = document.getElementById('products-grid') || document.createElement('section');
-    productsSection.id = 'products-grid';
-    
-    // Nettoyer et afficher le titre de la marque
-    productsSection.innerHTML = `<h2>Produits de ${brand.name}</h2><div class="products-container"></div>`;
-    document.body.appendChild(productsSection);
-
-    const container = productsSection.querySelector('.products-container');
-
-    brand.products.forEach(p => {
-        container.innerHTML += `
-            <div class="product-card">
-                <div class="product-img"></div> <h3>${p.name}</h3>
-                <p class="stars">${"⭐".repeat(p.stars)}</p>
-                <p class="price"><strong>${p.price} DH</strong></p>
-                <button onclick="addToCart()">Ajouter au Panier</button>
+function showBrands(cat) {
+    document.getElementById('brands-display').classList.remove('hidden');
+    const list = document.getElementById('brands-list');
+    list.innerHTML = '';
+    data[cat].forEach(brand => {
+        list.innerHTML += `
+            <div class="brand-card" style="background:white; padding:20px; margin:10px; border-radius:10px;">
+                <h3>${brand.name}</h3>
+                <p>${brand.story}</p>
+                <button onclick="showProducts('${cat}', '${brand.id}')" style="background:var(--maroc-green); color:white; border:none; padding:10px; cursor:pointer;">Découvrir les produits</button>
             </div>
         `;
     });
-    
-    // Scroll automatique vers les produits
-    productsSection.scrollIntoView({ behavior: 'smooth' });
 }
 
-function addToCart() {
-    cartCount++;
-    document.querySelector('.cart-btn').innerText = `🛒 Panier (${cartCount})`;
-    alert("Produit ajouté au panier !");
+function showProducts(cat, brandId) {
+    document.getElementById('products-display').classList.remove('hidden');
+    const brand = data[cat].find(b => b.id === brandId);
+    const list = document.getElementById('products-list');
+    list.innerHTML = '';
+    brand.products.forEach(p => {
+        list.innerHTML += `
+            <div class="product-item" style="border-bottom:1px solid #ccc; padding:20px;">
+                <h4>${p.n}</h4>
+                <p>Prix: ${p.p} DH | Avis: ${"⭐".repeat(p.stars)}</p>
+                <button style="background:var(--maroc-red); color:white; border:none; padding:5px 15px;">Acheter</button>
+            </div>
+        `;
+    });
 }
