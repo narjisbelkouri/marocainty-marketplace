@@ -1,3 +1,52 @@
+/* Logo Styling */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    height: 40px; /* Adjusti l-kboria dial l-icon */
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Alwan dial s-mia kima f l-image */
+.m-red { color: #7a1f26; }    /* Red ghamq */
+.a-orange, .r-orange, .o-orange { color: #d67d45; } /* Orange/Terracotta */
+.c-green, .a-green, .i-green, .n-green, .t-green, .y-green { color: #7c8d5c; } /* Sage Green */
+
+/* Hero Section m3a tswira o Blur (Update) */
+.hero {
+    position: relative;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: url('https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(5px); /* Chwia d l-flou */
+    background-color: rgba(26, 38, 28, 0.65); /* Tbaqa ghameqa bach tban l-ktaba */
+    background-blend-mode: overlay;
+    z-index: -1;
+    transform: scale(1.1);
+}
 :root {
     --primary-green: #2d4f32; /* Emerald Moroccan Green */
     --gold-accent: #c5a059;
