@@ -1,14 +1,38 @@
-# MAROCAINTY 🇲🇦
-[cite_start]**Marketplace e-commerce dédiée exclusivement aux marques locales marocaines.** [cite: 3, 4]
+# 🇲🇦 MAROCAINTY - Marketplace 100% Locale
 
-## 🌟 Vision du Projet
-[cite_start]MAROCAINTY est une plateforme digitale qui regroupe uniquement des marques locales et des startups marocaines. [cite: 6] [cite_start]L'objectif est de valoriser l'économie locale et de garantir l'authenticité des produits issus du patrimoine marocain. [cite: 28, 39]
+**MAROCAINTY** est une plateforme digitale de type marketplace qui regroupe uniquement des marques locales et des startups marocaines.  
+Elle permet à ces marques de vendre leurs produits via un site web unique, agissant comme un intermédiaire de confiance pour promouvoir le savoir-faire marocain.
 
-## 🎯 Fonctionnalités Clés (À développer)
-* [cite_start]**Catalogue 100% Local:** Uniquement des produits sans transformation étrangère. [cite: 25, 28]
-* [cite_start]**Pages Marques:** Chaque artisan ou startup aura son espace personnalisé avec sa présentation et ses contacts. [cite: 13, 20]
-* [cite_start]**Parcours Client:** Navigation par catégories, consultation de fiches produits et achat en ligne. [cite: 32, 33, 34]
+---
 
-## 🛠️ Stack Technique
-- **Frontend:** HTML5, CSS3, JavaScript (React à venir).
-- **Hébergement:** GitHub Pages / Vercel.
+## 🚀 Vision du Projet
+
+Le projet répond au besoin des consommateurs de trouver des produits authentiques et d'éviter les contrefaçons étrangères.  
+Il offre une visibilité digitale aux marques émergentes qui n'ont pas forcément les moyens de gérer leur propre site e-commerce.
+
+---
+
+## 🛠️ Fonctionnalités du Site
+
+- 🇲🇦 **Exclusivité Nationale**  
+  Uniquement des marques locales marocaines.
+
+- 🔍 **Transparence**  
+  Garantie de l'origine et de l'authenticité des produits.
+
+- 🏷️ **Pages Dédiées**  
+  Présentation personnalisée pour chaque marque avec ses produits et contacts.
+
+- 🛒 **Parcours Client Optimisé**  
+  Navigation par catégories, fiches produits détaillées et achat en ligne.
+
+---
+
+## 👥 Cibles
+
+- 🎯 **Cible Primaire**  
+  Consommateurs marocains (jeunes adultes) sensibles au *"consommer local"*.
+
+- 🤝 **Cible Secondaire**  
+  Artisans, créateurs et startups du Maroc.
+
