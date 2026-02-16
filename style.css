@@ -324,3 +324,12 @@ footer {
         order: -1; /* Tswira tl3 hiya lwala f tilifoun */
     }
 }
+/* Style du curseur de l'effet Typing */
+.typed-cursor {
+    color: var(--a-orange); /* Ou la couleur que tu préfères */
+    font-size: 40px;
+}
+
+#typing-text {
+    min-height: 120px; /* Évite que le reste de la page bouge pendant l'écriture */
+}
