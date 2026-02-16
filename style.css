@@ -1,54 +1,6 @@
-/* Logo Styling */
-.logo-container {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.logo-icon {
-    height: 40px; /* Adjusti l-kboria dial l-icon */
-    width: auto;
-}
-
-.logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* Alwan dial s-mia kima f l-image */
-.m-red { color: #7a1f26; }    /* Red ghamq */
-.a-orange, .r-orange, .o-orange { color: #d67d45; } /* Orange/Terracotta */
-.c-green, .a-green, .i-green, .n-green, .t-green, .y-green { color: #7c8d5c; } /* Sage Green */
-
-/* Hero Section m3a tswira o Blur (Update) */
-.hero {
-    position: relative;
-    height: 85vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    overflow: hidden;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg');
-    background-size: cover;
-    background-position: center;
-    filter: blur(5px); /* Chwia d l-flou */
-    background-color: rgba(26, 38, 28, 0.65); /* Tbaqa ghameqa bach tban l-ktaba */
-    background-blend-mode: overlay;
-    z-index: -1;
-    transform: scale(1.1);
-}
+/* 1. Variables o Global Styles */
 :root {
-    --primary-green: #2d4f32; /* Emerald Moroccan Green */
+    --primary-green: #2d4f32;
     --gold-accent: #c5a059;
     --bg-beige: #fdfaf5;
     --text-dark: #1a1a1a;
@@ -73,7 +25,30 @@ body {
     padding: 80px 20px;
 }
 
-/* Navbar */
+/* 2. Logo Styling (Modern Moroccan Colors) */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    height: 40px;
+    width: auto;
+}
+
+.logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.m-red { color: #7a1f26; }
+.a-orange, .r-orange, .o-orange { color: #d67d45; }
+.c-green, .a-green, .i-green, .n-green, .t-green, .y-green { color: #7c8d5c; }
+
+/* 3. Navbar */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -84,14 +59,6 @@ body {
     top: 0;
     z-index: 1000;
     transition: 0.3s;
-}
-
-.logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: bold;
-    letter-spacing: 2px;
-    color: var(--primary-green);
 }
 
 .nav-links {
@@ -115,8 +82,7 @@ body {
     cursor: pointer;
 }
 
-/* Hero Section */
-/* Hero Section m3a tswira o Blur */
+/* 4. Hero Section m3a Background Blur */
 .hero {
     position: relative;
     height: 85vh;
@@ -125,27 +91,21 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    overflow: hidden; /* Bach l-blur may-khrejch 3la l-jnib */
+    overflow: hidden;
 }
 
 .hero::before {
     content: "";
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
-    /* Tswira lli tlebty */
     background-image: url('https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg');
     background-size: cover;
     background-position: center;
-    
-    /* L-effat dial flou (Blur) */
-    filter: blur(4px); 
-    
-    /* Layer bach t-ghmeq tswira chwiya o t-ban l-ktaba */
-    background-color: rgba(45, 79, 50, 0.6); 
+    filter: blur(4px);
+    background-color: rgba(26, 38, 28, 0.6); /* Overlay bach ktaba tban */
     background-blend-mode: overlay;
-    
-    z-index: -1; /* Bach t-bqa l-lor */
-    transform: scale(1.1); /* Bach l-jnib dial l-blur may-banouch khawyin */
+    z-index: -1;
+    transform: scale(1.1);
 }
 
 .hero-content {
@@ -154,13 +114,20 @@ body {
     padding: 0 15%;
 }
 
-/* Modifi hado bach y-jiw m3a tswira */
 .hero h1 {
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 5vw, 54px);
     margin-bottom: 25px;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.3); /* Dila sghira bach t-ban l-ktaba ktar */
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
 }
+
+.hero-btns {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* 5. Buttons */
 .btn-white {
     background: white;
     color: var(--primary-green);
@@ -180,7 +147,7 @@ body {
     cursor: pointer;
 }
 
-/* Categories */
+/* 6. Categories Grid */
 .section-title {
     text-align: center;
     margin-bottom: 50px;
@@ -223,7 +190,7 @@ body {
     transform: scale(1.1);
 }
 
-/* Contact */
+/* 7. Contact Section */
 .contact-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -254,6 +221,7 @@ body {
     cursor: pointer;
 }
 
+/* 8. Footer */
 footer {
     text-align: center;
     padding: 40px;
