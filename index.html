@@ -3,67 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAROCAINTY - Marketplace</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MAROCAINTY | Excellence Marocaine</title>
+    
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">MAROCAINTY</div>
         <ul class="nav-links">
-            <li><a href="#">Accueil</a></li>
-            <li><a href="#">Nos Offres</a></li>
-            <li><a href="#">À propos</a></li>
-            <li><a href="#">Marques</a></li>
-            <li><a href="#">Contact</a></li>
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#offres">Nos Offres</a></li>
+            <li><a href="#propos">À propos</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="btn-outline">Découvrir les marques</button>
     </nav>
 
-    <header class="hero">
-        <div class="hero-text">
+    <header class="hero" id="home">
+        <div class="hero-content" data-aos="fade-up">
             <h1>Chez MAROCAINTY, nous célébrons le savoir-faire marocain.</h1>
             <p>Une marketplace 100% dédiée aux marques locales et à l'authenticité.</p>
             <div class="hero-btns">
-                <button class="btn-white">Découvrir les catégories</button>
-                <button class="btn-green">Rejoindre la plateforme</button>
+                <button class="btn-white" id="scroll-to-offres">Découvrir les catégories</button>
+                <button class="btn-transparent">Rejoindre la plateforme</button>
             </div>
         </div>
     </header>
 
-    <section class="categories container">
-        <h2>Nos Offres</h2>
-        <p>Découvrez nos catégories de produits authentiques</p>
+    <section class="categories container" id="offres">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Nos Offres</h2>
+            <p>Découvrez nos catégories de produits authentiques</p>
+        </div>
+        
         <div class="category-grid">
-            <div class="cat-card"><img src="nourriture.jpg" alt="Nourriture"><h3>Nourriture</h3><p>Explorer la catégorie</p></div>
-            <div class="cat-card"><img src="vetements.jpg" alt="Vêtements"><h3>Vêtements</h3><p>Explorer la catégorie</p></div>
-            <div class="cat-card"><img src="cosmetiques.jpg" alt="Cosmétiques"><h3>Cosmétiques</h3><p>Explorer la catégorie</p></div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1541529086526-db283c563270?q=80" alt="Nourriture"></div>
+                <h3>Nourriture</h3>
+                <a href="#">Explorer la catégorie</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?q=80" alt="Vêtements"></div>
+                <h3>Vêtements</h3>
+                <a href="#">Explorer la catégorie</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="img-container"><img src="https://images.unsplash.com/photo-1612817288484-6f916006741a?q=80" alt="Cosmétiques"></div>
+                <h3>Cosmétiques</h3>
+                <a href="#">Explorer la catégorie</a>
+            </div>
         </div>
     </section>
 
+    <section class="contact container" id="contact" data-aos="fade-up">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>Contactez-nous</h2>
+                <p>Nous sommes à votre écoute</p>
+                <p>📧 contact@marocainty.ma</p>
+                <p>📞 +212 5XX-XXXXXX</p>
+            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Votre nom">
+                <input type="email" placeholder="Votre email">
+                <textarea placeholder="Votre message"></textarea>
+                <button type="submit" class="btn-green">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MAROCAINTY. 100% marques marocaines.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-<header class="hero" data-aos="fade-up">
-    <div class="hero-text">
-        <h1 data-aos="zoom-in" data-aos-delay="300">Chez MAROCAINTY...</h1>
-        <p data-aos="fade-up" data-aos-delay="500">Une marketplace 100% dédiée...</p>
-    </div>
-</header>
-
-<div class="category-grid">
-    <div class="cat-card" data-aos="fade-right"> ... </div>
-    <div class="cat-card" data-aos="fade-up"> ... </div>
-    <div class="cat-card" data-aos="fade-left"> ... </div>
-</div>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000, // sora3a dial l-animation
-    once: true      // t-tra ghir mra whda
-  });
-</script>
 </body>
 </html>
