@@ -1,50 +1,39 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAROCAINTY | Marketplace 100% Authentique</title>
+    <title>Moroccan Marketplace</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header style="background: #006233; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white;">
-        <div style="font-size: 24px; font-weight: bold;">MAROCAINTY</div>
-        <nav>
-            <a href="#" style="color: white; text-decoration: none; margin-left: 20px;">Accueil</a>
-            <a href="#" style="color: white; text-decoration: none; margin-left: 20px;">Panier 🛒</a>
+    <header>
+        <nav class="navbar">
+            <div class="logo">M-Market <span>🇲🇦</span></div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Artisanat</a></li>
+                <li><a href="#">Caftan</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
         </nav>
     </header>
 
-    <section style="background: #f4f4f4; padding: 50px 10%; text-align: center; border-bottom: 5px solid #C1272D;">
-        <h1 style="color: #006233;">Le meilleur du <span style="color: #C1272D;">Savoir-faire Marocain</span></h1>
-        <p>Découvrez l'**artisanat marocain en ligne** et nos **marques locales**.</p>
-    </section>
-
-    <section id="categories" style="padding: 40px 10%;">
-        <h2 style="text-align: center; color: #006233;">Nos Catégories</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
-            <div onclick="showBrands('cosmetique')" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; cursor: pointer;">
-                <div style="font-size: 40px;">🌿</div>
-                <h3>Cosmétique Bio</h3>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Ktechep l-assala l-maghribia</h1>
+                <p>Top quality products directly from artisans.</p>
+                <button class="btn-primary">Shop Now</button>
             </div>
-            <div onclick="showBrands('artisanat')" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; cursor: pointer;">
-                <div style="font-size: 40px;">🏺</div>
-                <h3>Artisanat</h3>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="brands-area" style="padding: 40px 10%; display: none;">
-        <h2 style="text-align: center; color: #006233;">Marques Disponibles</h2>
-        <div id="brands-list"></div>
-    </section>
-
-    <footer style="background: #C1272D; color: white; padding: 60px 10%; text-align: center;">
-        <h2>Contactez-nous</h2>
-        <p>Rejoignez la première marketplace 100% marocaine.</p>
-        <button style="background: white; color: #C1272D; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer;">S'inscrire</button>
-    </footer>
+        <section class="products" id="product-grid">
+            </section>
+    </main>
 
     <script src="script.js"></script>
 </body>
