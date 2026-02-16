@@ -36,3 +36,33 @@ function showProducts(cat, brandId) {
             </div>`;
     });
 }
+const data = {
+    'cosmetique': [
+        { name: 'Souss Nature', story: 'Coopérative d’argan bio.' }
+    ],
+    'artisanat': [
+        { name: 'Atlas Craft', story: 'Tapis faits main.' }
+    ]
+};
+
+function showBrands(cat) {
+    // Had l-ster houwa li kiy-7iyed "display: none" bach i-ban l-qism
+    const area = document.getElementById('brands-area');
+    area.style.display = 'block'; 
+    
+    const list = document.getElementById('brands-list');
+    list.innerHTML = '';
+    
+    data[cat].forEach(brand => {
+        list.innerHTML += `
+            <div style="border: 1px solid #ddd; padding: 15px; margin-top: 10px; border-radius: 8px;">
+                <h3>${brand.name}</h3>
+                <p>${brand.story}</p>
+                <button style="background:#006233; color:white; border:none; padding:5px 10px; cursor:pointer;">Voir Produits</button>
+            </div>
+        `;
+    });
+    
+    // Scroll l-t7t bach i-banu l-marques
+    area.scrollIntoView({ behavior: 'smooth' });
+}
