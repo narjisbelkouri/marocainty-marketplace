@@ -1,35 +1,34 @@
 :root {
-    --maroc-red: #C1272D;
-    --maroc-green: #006233;
+    --maroc-green: #006233; /* Khder d-Raya */
+    --maroc-red: #C1272D;   /* Rouge d-Raya */
     --gold: #d4af37;
-    --bg-light: #f4f4f4;
 }
 
-body { font-family: 'Poppins', sans-serif; margin: 0; background: var(--bg-light); }
+body { font-family: 'Arial', sans-serif; margin: 0; background: #fdfdfd; }
 
-.navbar-figma { 
-    background: var(--maroc-green); /* Rjj3na l-khder dial Figma */
-    padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white;
+/* Navbar bl-khder kima f Figma */
+.main-header { background: var(--maroc-green); padding: 15px 5%; }
+.navbar { display: flex; justify-content: space-between; align-items: center; color: white; }
+.logo { font-size: 24px; font-weight: bold; letter-spacing: 2px; }
+.nav-links { list-style: none; display: flex; gap: 20px; }
+.nav-links a { color: white; text-decoration: none; font-weight: bold; }
+
+.hero { 
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=1500');
+    height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center;
 }
-.logo { font-size: 26px; font-weight: 800; color: white; }
-.navbar-figma ul { display: flex; list-style: none; }
-.navbar-figma ul li a { color: white; text-decoration: none; margin-left: 20px; font-weight: bold; }
+.hero h1 span { color: var(--maroc-red); }
 
-.hero-figma { 
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1539667468225-eebb663053e6?q=80&w=1500');
-    height: 50vh; background-size: cover; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; text-align: center;
-}
-.hero-figma h1 span { color: var(--maroc-red); }
+.section-padding { padding: 60px 10%; }
+.title { text-align: center; color: var(--maroc-green); margin-bottom: 40px; }
 
-.section-title { text-align: center; margin: 40px 0; color: var(--maroc-green); font-size: 2rem; }
+/* Cards Style */
+.grid-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: white; padding: 30px; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; }
+.card:hover { border: 2px solid var(--gold); transform: translateY(-5px); }
 
-/* Grid Categories */
-.categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 0 10%; }
-.cat-card { background: white; padding: 30px; border-radius: 15px; text-align: center; cursor: pointer; transition: 0.3s; border: 2px solid transparent; }
-.cat-card:hover { border-color: var(--gold); transform: scale(1.05); }
+/* Contact Banner (Rouge Marocain) */
+.contact-banner { background: var(--maroc-red); color: white; padding: 80px 10%; text-align: center; }
+.btn-white { background: white; color: var(--maroc-red); border: none; padding: 12px 30px; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 20px; }
 
-/* Logic Visibility */
 .hidden { display: none; }
-
-/* Contact Section (Banner Rouge) */
-.contact-banner { background: var(--maroc-red); color: white; padding: 50px; text-align: center; margin-top: 50px; }
