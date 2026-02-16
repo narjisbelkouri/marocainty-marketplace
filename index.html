@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marocainty | Marketplace 100% Locale</title>
+    <title>MAROCAINTY | Marketplace 100% Locale & Authentique</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,23 +11,41 @@
         <nav>
             <div class="logo">MAROCAINTY</div>
             <ul>
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Marques</a></li>
-                <li><a href="#">Produits</a></li>
-                <li><a href="#" id="cart">🛒 Panier (0)</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#brands">Nos Marques</a></li>
+                <li><a href="#categories">Catégories</a></li>
+                <li><a href="#" class="cart-btn">🛒 Panier (0)</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="hero">
-            <h1>Le meilleur du savoir-faire marocain</h1>
-            <p>Découvrez des marques 100% locales et authentiques.</p>
-        </section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Le meilleur du <span>Savoir-faire Marocain</span></h1>
+            <p>Découvrez la première **Marketplace marocaine** dédiée exclusivement aux **marques locales** et à l'**artisanat marocain en ligne**.</p>
+            <button class="cta-btn">Explorer les Marques</button>
+        </div>
+    </section>
 
-        <section id="products-grid">
-            </section>
-    </main>
+    <section id="brands">
+        <h2>Nos Marques Locales Authentiques</h2>
+        <div class="brands-container">
+            <div class="brand-card">
+                <div class="brand-info">
+                    <h3>Souss Nature</h3>
+                    <p class="story">Spécialiste de la <strong>Cosmétique naturelle Maroc</strong>. Chaque goutte d'huile d'argan est pressée à la main par des coopératives locales.</p>
+                    <button class="view-products" onclick="showProducts('souss')">Voir les Produits</button>
+                </div>
+            </div>
+            <div class="brand-card">
+                <div class="brand-info">
+                    <h3>Atlas Craft</h3>
+                    <p class="story">Le <strong>Tapis marocain fait main</strong> revisité. Un mélange entre tradition berbère et design moderne.</p>
+                    <button class="view-products" onclick="showProducts('atlas')">Voir les Produits</button>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
