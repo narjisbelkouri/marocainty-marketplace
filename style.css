@@ -191,34 +191,83 @@ body {
 }
 
 /* 7. Contact Section */
+/* --- Contact Section (Update b loun l-M) --- */
+.contact {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
 .contact-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 50px;
-    background: white;
-    padding: 50px;
-    border-radius: 20px;
+    background: #7a1f26; /* Nafs loun l-M (Burundy) */
+    padding: 60px;
+    border-radius: 30px;
+    color: white; /* Ktaba t-welli b l-byad bach t-ban */
+    box-shadow: 0 20px 40px rgba(122, 31, 38, 0.2);
 }
 
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.contact-form input, .contact-form textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.btn-green {
-    background: var(--primary-green);
+.contact-info h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    margin-bottom: 20px;
     color: white;
+}
+
+.contact-info p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+/* Gadina l-form bach i-ji mzyan m3a l-7mer */
+.contact-form input, 
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    outline: none;
+}
+
+.contact-form input::placeholder, 
+.contact-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+/* L-bouton dial Contact */
+.btn-green {
+    background: white; /* Bouton byad foq l-7mer kiji wa3er */
+    color: #7a1f26;
     border: none;
-    padding: 12px;
-    border-radius: 8px;
+    padding: 15px;
+    border-radius: 12px;
     cursor: pointer;
+    font-weight: 700;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-green:hover {
+    background: #fdfaf5;
+    transform: translateY(-3px);
+}
+
+/* Mobile Fix */
+@media (max-width: 768px) {
+    .contact-box {
+        grid-template-columns: 1fr;
+        padding: 30px;
+    }
 }
 
 /* 8. Footer */
