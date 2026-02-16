@@ -7,50 +7,43 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="main-header">
-        <nav class="navbar">
-            <div class="logo">MAROCAINTY</div>
-            <ul class="nav-links">
-                <li><a href="#">Accueil</a></li>
-                <li><a href="#">Boutique</a></li>
-                <li><a href="#" class="cart-icon">🛒 (0)</a></li>
-            </ul>
+
+    <header style="background: #006233; padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; color: white;">
+        <div style="font-size: 24px; font-weight: bold;">MAROCAINTY</div>
+        <nav>
+            <a href="#" style="color: white; text-decoration: none; margin-left: 20px;">Accueil</a>
+            <a href="#" style="color: white; text-decoration: none; margin-left: 20px;">Panier 🛒</a>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>Le meilleur du <span>Savoir-faire Marocain</span></h1>
-        <p>Votre **Marketplace marocaine** de référence pour l'**artisanat marocain en ligne**.</p>
+    <section style="background: #f4f4f4; padding: 50px 10%; text-align: center; border-bottom: 5px solid #C1272D;">
+        <h1 style="color: #006233;">Le meilleur du <span style="color: #C1272D;">Savoir-faire Marocain</span></h1>
+        <p>Découvrez l'**artisanat marocain en ligne** et nos **marques locales**.</p>
     </section>
 
-    <section id="categories" class="section-padding">
-        <h2 class="title">Nos Catégories</h2>
-        <div class="grid-container">
-            <div class="card" onclick="showBrands('cosmetique')">
-                <div class="icon">🌿</div>
-                <h3>Cosmétique naturelle Maroc</h3>
+    <section id="categories" style="padding: 40px 10%;">
+        <h2 style="text-align: center; color: #006233;">Nos Catégories</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+            <div onclick="showBrands('cosmetique')" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; cursor: pointer;">
+                <div style="font-size: 40px;">🌿</div>
+                <h3>Cosmétique Bio</h3>
             </div>
-            <div class="card" onclick="showBrands('artisanat')">
-                <div class="icon">🏺</div>
-                <h3>Artisanat & Déco</h3>
+            <div onclick="showBrands('artisanat')" style="background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center; cursor: pointer;">
+                <div style="font-size: 40px;">🏺</div>
+                <h3>Artisanat</h3>
             </div>
         </div>
     </section>
 
-    <section id="brands-area" class="section-padding hidden">
-        <h2 class="title">Marques Partenaires</h2>
-        <div id="brands-list" class="grid-container"></div>
+    <section id="brands-area" style="padding: 40px 10%; display: none;">
+        <h2 style="text-align: center; color: #006233;">Marques Disponibles</h2>
+        <div id="brands-list"></div>
     </section>
 
-    <section id="products-area" class="section-padding hidden">
-        <h2 class="title">Produits Authentiques</h2>
-        <div id="products-list" class="grid-container"></div>
-    </section>
-
-    <footer class="contact-banner">
+    <footer style="background: #C1272D; color: white; padding: 60px 10%; text-align: center;">
         <h2>Contactez-nous</h2>
-        <p>Vous êtes une marque locale ? Rejoignez l'aventure MAROCAINTY.</p>
-        <button class="btn-white">Envoyer un message</button>
+        <p>Rejoignez la première marketplace 100% marocaine.</p>
+        <button style="background: white; color: #C1272D; border: none; padding: 10px 25px; border-radius: 5px; font-weight: bold; cursor: pointer;">S'inscrire</button>
     </footer>
 
     <script src="script.js"></script>
