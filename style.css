@@ -62,3 +62,32 @@ body {
     cursor: pointer;
     border-radius: 5px;
 }
+/* Container lli ghadi yjme3 kolchi f l-west */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section dial Categories (T9der t-appliquerha 3la "Artisanat", "Caftans", etc.) */
+.category-strip {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.category-item {
+    text-align: center;
+    cursor: pointer;
+}
+
+.category-item img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent-color);
+}
