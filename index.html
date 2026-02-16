@@ -1,39 +1,46 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moroccan Marketplace</title>
+    <title>MAROCAINTY - Marketplace</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <nav class="navbar">
-            <div class="logo">M-Market <span>🇲🇦</span></div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Artisanat</a></li>
-                <li><a href="#">Caftan</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
-        </nav>
+    <nav class="navbar">
+        <div class="logo">MAROCAINTY</div>
+        <ul class="nav-links">
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">Nos Offres</a></li>
+            <li><a href="#">À propos</a></li>
+            <li><a href="#">Marques</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <button class="btn-outline">Découvrir les marques</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Chez MAROCAINTY, nous célébrons le savoir-faire marocain.</h1>
+            <p>Une marketplace 100% dédiée aux marques locales et à l'authenticité.</p>
+            <div class="hero-btns">
+                <button class="btn-white">Découvrir les catégories</button>
+                <button class="btn-green">Rejoindre la plateforme</button>
+            </div>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Ktechep l-assala l-maghribia</h1>
-                <p>Top quality products directly from artisans.</p>
-                <button class="btn-primary">Shop Now</button>
-            </div>
-        </section>
-
-        <section class="products" id="product-grid">
-            </section>
-    </main>
+    <section class="categories container">
+        <h2>Nos Offres</h2>
+        <p>Découvrez nos catégories de produits authentiques</p>
+        <div class="category-grid">
+            <div class="cat-card"><img src="nourriture.jpg" alt="Nourriture"><h3>Nourriture</h3><p>Explorer la catégorie</p></div>
+            <div class="cat-card"><img src="vetements.jpg" alt="Vêtements"><h3>Vêtements</h3><p>Explorer la catégorie</p></div>
+            <div class="cat-card"><img src="cosmetiques.jpg" alt="Cosmétiques"><h3>Cosmétiques</h3><p>Explorer la catégorie</p></div>
+        </div>
+    </section>
 
     <script src="script.js"></script>
 </body>
