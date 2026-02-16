@@ -1,27 +1,53 @@
+// Données des marques et produits (Authenticité garantie)
+const database = {
+    'souss': {
+        name: "Souss Nature",
+        description: "Spécialiste de la Cosmétique naturelle Maroc. Huile d'Argan 100% bio.",
+        products: [
+            { name: "Huile d'Argan Bio", price: 150, stars: 5, img: "argan.jpg" },
+            { name: "Savon Noir Premium", price: 60, stars: 4, img: "savon.jpg" }
+        ]
+    },
+    'atlas': {
+        name: "Atlas Craft",
+        description: "Tapis marocain fait main. Tradition et design moderne.",
+        products: [
+            { name: "Tapis Zanafi", price: 1200, stars: 5, img: "tapis.jpg" },
+            { name: "Coussin Artisanal", price: 250, stars: 4, img: "coussin.jpg" }
+        ]
+    }
+};
+
 let cartCount = 0;
-const products = [
-    { id: 1, name: "Huile d'Argan Bio", price: 150, brand: "Souss-Nature" },
-    { id: 2, name: "Tapis Zanafi", price: 1200, brand: "Atlas Craft" },
-    { id: 3, name: "Caftan Moderne", price: 850, brand: "MarocCreations" }
-];
 
-const grid = document.getElementById('products-grid');
-const cartStatus = document.getElementById('cart');
+function showProducts(brandId) {
+    const brand = database[brandId];
+    const productsSection = document.getElementById('products-grid') || document.createElement('section');
+    productsSection.id = 'products-grid';
+    
+    // Nettoyer et afficher le titre de la marque
+    productsSection.innerHTML = `<h2>Produits de ${brand.name}</h2><div class="products-container"></div>`;
+    document.body.appendChild(productsSection);
 
-// Afficher les produits
-products.forEach(p => {
-    grid.innerHTML += `
-        <div class="product-card">
-            <h3>${p.name}</h3>
-            <p>Marque: ${p.brand}</p>
-            <p><strong>${p.price} DH</strong></p>
-            <button onclick="addToCart()">Ajouter au Panier</button>
-        </div>
-    `;
-});
+    const container = productsSection.querySelector('.products-container');
+
+    brand.products.forEach(p => {
+        container.innerHTML += `
+            <div class="product-card">
+                <div class="product-img"></div> <h3>${p.name}</h3>
+                <p class="stars">${"⭐".repeat(p.stars)}</p>
+                <p class="price"><strong>${p.price} DH</strong></p>
+                <button onclick="addToCart()">Ajouter au Panier</button>
+            </div>
+        `;
+    });
+    
+    // Scroll automatique vers les produits
+    productsSection.scrollIntoView({ behavior: 'smooth' });
+}
 
 function addToCart() {
     cartCount++;
-    cartStatus.innerText = `🛒 Panier (${cartCount})`;
-    console.log("Nombre d'articles:", cartCount);
+    document.querySelector('.cart-btn').innerText = `🛒 Panier (${cartCount})`;
+    alert("Produit ajouté au panier !");
 }

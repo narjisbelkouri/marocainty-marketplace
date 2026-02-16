@@ -29,3 +29,29 @@ nav ul li a:hover { color: var(--green-flag); }
 .brand-info h3 { color: var(--green-flag); margin-bottom: 10px; }
 .story { font-style: italic; color: #666; font-size: 14px; margin-bottom: 20px; }
 .view-products { background: transparent; border: 2px solid var(--red-flag); color: var(--red-flag); padding: 8px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; }
+#products-grid {
+    padding: 60px 10%;
+    background: #fff;
+}
+
+.products-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.product-card {
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.stars { color: #f1c40f; margin: 10px 0; }
+.price { color: var(--green-flag); font-size: 1.2rem; }
