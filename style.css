@@ -222,7 +222,11 @@ body {
 }
 
 /* Gadina l-form bach i-ji mzyan m3a l-7mer */
-.contact-form input, 
+.contact-form {
+    display: flex;
+    flex-direction: column; /* Hada hoa l-sir bach i-jiw wa7ed t7t wa7ed */
+    gap: 20px; /* l-msafa binat-hom */
+}, 
 .contact-form textarea {
     padding: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
