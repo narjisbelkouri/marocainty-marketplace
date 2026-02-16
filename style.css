@@ -228,3 +228,38 @@ footer {
     background: #eee;
     font-size: 14px;
 }
+/* --- Responsive Design (Mobile) --- */
+
+@media (max-width: 768px) {
+    /* Navbar t-welli m-gadou f l-portable */
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .nav-links {
+        gap: 15px;
+        font-size: 12px;
+    }
+
+    /* L-ktaba dial l-Hero t-welli sghira bach t-ban kamla */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero-btns {
+        flex-direction: column; /* Buttons wahed foq wahed */
+        width: 100%;
+    }
+
+    /* L-Contact box t-welli fiha 1 column blast 2 */
+    .contact-box {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr; /* Tsawer dial categories wahed foq wahed */
+    }
+}
