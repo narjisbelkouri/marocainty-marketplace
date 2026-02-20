@@ -4,70 +4,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAROCAINTY | Vitrine des Marques Marocaines</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <nav class="navbar">
         <div class="logo-container">
-            <div class="logo-text"><span class="m-red">M</span>AROCAINTY</div>
+            <img src="logo-icon.png" alt="Marocainty Logo" class="logo-icon">
+            <div class="logo-text">
+                <span class="m-red">M</span>AROCAINTY
+            </div>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#offres">Catégories</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#propos">À propos</a></li>
         </ul>
         <button class="btn-outline">Proposer une marque</button>
     </nav>
 
     <header class="hero" id="home">
-        <div class="hero-content">
-            <h1 id="typing-text"></h1>
-            <p>Le propulseur n°1 de la visibilité des marques locales.</p>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 id="typing-text"></h1> 
+            <p>Le premier média digital dédié au rayonnement des marques locales et à l'authenticité marocaine.</p>
+            <div class="hero-btns">
+                <button class="btn-white" onclick="document.getElementById('offres').scrollIntoView({behavior: 'smooth'})">Explorer les catégories</button>
+                <button class="btn-transparent">Devenir Partenaire</button>
+            </div>
         </div>
     </header>
 
     <section class="categories container" id="offres">
-        <div class="section-title">
+        <div class="section-title" data-aos="fade-up">
             <h2>Nos Secteurs d'Excellence</h2>
+            <p>Découvrez les univers où brillent nos créateurs locaux</p>
         </div>
+        
         <div class="category-grid">
-            <div class="cat-card" data-aos="fade-up">
-                <div class="img-container"><img src="nou.png"></div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-container">
+                    <img src="nou.png" alt="Nourriture Marocaine">
+                </div>
                 <h3>Nourriture</h3>
-                <a href="categories.html?type=nourriture" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=nourriture" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
-            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="img-container"><img src="n1.png"></div>
+
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="img-container">
+                    <img src="n1.png" alt="Mode Marocaine">
+                </div>
                 <h3>Vêtements</h3>
-                <a href="categories.html?type=vetements" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=vetements" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
-            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="img-container"><img src="cosm.png"></div>
+
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="img-container">
+                    <img src="cosm.png" alt="Cosmétiques Marocains">
+                </div>
                 <h3>Cosmétiques</h3>
-                <a href="categories.html?type=cosmetiques" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=cosmetiques" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
-            <div class="cat-card" data-aos="fade-up">
-                <div class="img-container"><img src="dec.png"></div>
+
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="img-container">
+                    <img src="dec.png" alt="Décoration Marocaine">
+                </div>
                 <h3>Décoration</h3>
-                <a href="categories.html?type=decoration" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=decoration" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
-            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="img-container"><img src="bij.png"></div>
+
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="500">
+                <div class="img-container">
+                    <img src="bij.png" alt="Bijoux Marocains">
+                </div>
                 <h3>Bijoux</h3>
-                <a href="categories.html?type=bijoux" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=bijoux" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
-            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="img-container"><img src="acc.png"></div>
+
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="600">
+                <div class="img-container">
+                    <img src="acc.png" alt="Accessoires Marocains">
+                </div>
                 <h3>Accessoires</h3>
-                <a href="categories.html?type=accessoires" class="explorer-link">Explorer la catégorie →</a>
+                <a href="categories.html?type=accessoires" class="explorer-link">Explorer la catégorie <span class="arrow">→</span></a>
             </div>
         </div>
     </section>
 
+    <section class="about container" id="propos" data-aos="fade-up">
+        <div class="about-grid">
+            <div class="about-text">
+                <h2>À propos de MAROCAINTY</h2>
+                <p>Nous sommes une vitrine digitale dédiée à la promotion du <strong>savoir-faire marocain</strong>. Notre mission est de donner de la visibilité aux marques locales authentiques.</p>
+                <ul class="about-list">
+                    <li>🚀 Visibilité maximale</li>
+                    <li>📖 Storytelling authentique</li>
+                    <li>🇲🇦 Soutien au local</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <img src="https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg" alt="Concept Marocainty">
+            </div>
+        </div>
+    </section>
+
+    <footer style="text-align: center; padding: 40px; background: #f4f4f4; margin-top: 50px;">
+        <p>&copy; 2026 MAROCAINTY. Vitrine n°1 des marques marocaines.</p>
+    </footer>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="script.js"></script>
+    <script>
+        // Initialiser les animations AOS
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
