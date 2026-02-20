@@ -1,286 +1,48 @@
 :root {
-    --primary-green: #2d4f32;
+    --burgundy: #7a1f26;
+    --green: #2d4f32;
+    --gold: #d67d45;
     --bg-beige: #fdfaf5;
-    --text-dark: #1a1a1a;
-    --m-red: #7a1f26;
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: var(--bg-beige);
-    color: var(--text-dark);
-    line-height: 1.6;
-}
-
-.container { max-width: 1200px; margin: 0 auto; padding: 80px 20px; }
+body { font-family: 'Montserrat', sans-serif; background: var(--bg-beige); margin: 0; color: #333; }
+.container { max-width: 1100px; margin: 0 auto; padding: 50px 20px; }
 
 /* Navbar */
-.navbar {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 8%; background: white; position: sticky; top: 0;
-    z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    transition: all 0.3s ease;
-}
-.logo-container { display: flex; align-items: center; gap: 12px; }
-.logo-icon { height: 40px; }
-.logo-text { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: bold; }
-.m-red { color: var(--m-red); }
-.a-orange, .r-orange, .o-orange { color: #d67d45; }
-.c-green, .a-green, .i-green, .n-green, .t-green, .y-green { color: #7c8d5c; }
-
-.nav-links { display: flex; list-style: none; gap: 25px; }
-.nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 500; font-size: 14px; }
-.btn-outline { border: 1px solid var(--text-dark); background: transparent; padding: 10px 25px; border-radius: 25px; cursor: pointer; }
-
-/* Hero */
-.hero {
-    position: relative; height: 85vh; display: flex; align-items: center;
-    justify-content: center; text-align: center; color: white;
-}
-.hero::before {
-    content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background-image: url('https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg');
-    background-size: cover; background-position: center; filter: blur(4px); z-index: -1;
-}
-.hero::after { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(26, 38, 28, 0.65); z-index: -1; }
-.hero-content { padding: 0 10%; }
-.hero h1 { font-family: 'Playfair Display', serif; font-size: 48px; margin-bottom: 20px; }
-.hero-btns { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
-.btn-white { background: white; color: var(--primary-green); border: none; padding: 15px 30px; border-radius: 30px; font-weight: 600; cursor: pointer; }
-.btn-transparent { background: transparent; color: white; border: 1px solid white; padding: 15px 30px; border-radius: 30px; cursor: pointer; }
-
-/* Category Cards - Floating Animation */
-.section-title { text-align: center; margin-bottom: 50px; }
-.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 35px; }
-
-.cat-card {
-    background: white; padding: 25px; border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    cursor: pointer;
-}
-
-/* Hadchi li tlebty: Floating + Image scale */
-.cat-card:hover {
-    transform: translateY(-15px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.img-container { height: 230px; overflow: hidden; border-radius: 15px; margin-bottom: 20px; }
-.img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-.cat-card:hover img { transform: scale(1.1); }
-
-.cat-card h3 { font-family: 'Playfair Display', serif; font-size: 22px; margin-bottom: 12px; }
-
-.explorer-link { 
-    text-decoration: none; color: #777; font-size: 14px; 
-    display: flex; align-items: center; gap: 8px; transition: 0.3s;
-}
-.cat-card:hover .explorer-link { color: var(--primary-green); }
-.cat-card:hover .arrow { transform: translateX(8px); }
-.arrow { transition: 0.3s; }
-
-/* About & Contact */
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; background: white; padding: 40px; border-radius: 30px; }
-.about-image img { width: 100%; border-radius: 20px; box-shadow: 15px 15px 0px var(--primary-green); }
-.about-list { list-style: none; margin-top: 20px; font-weight: 600; color: var(--primary-green); }
-
-.contact-box { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; background: var(--m-red); padding: 50px; border-radius: 30px; color: white; }
-.contact-form { display: flex; flex-direction: column; gap: 15px; }
-.contact-form input, .contact-form textarea { padding: 15px; border-radius: 8px; border: none; }
-.btn-green { background: white; color: var(--m-red); border: none; padding: 15px; border-radius: 8px; cursor: pointer; font-weight: 700; }
-
-@media (max-width: 768px) {
-    .about-grid, .contact-box { grid-template-columns: 1fr; }
-    .nav-links { display: none; }
-}
-footer { text-align: center; padding: 30px; background: #f0f0f0; margin-top: 40px; }
-.marques-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* L-barre dial l-marque f l-wel */
-.brand-card {
-    background: white;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-    cursor: pointer;
-    overflow: hidden;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animation smooth */
-    max-height: 80px; /* Ghir l-logo w l-ism f l-wel */
-}
-
-/* Melli kat-kber (Active) */
-.brand-card.active {
-    max-height: 600px; /* Kat-kber bach t-biyyen kolchi */
-    border-left: 5px solid var(--primary-green);
-}
-
-.brand-header {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.brand-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; }
-
-/* L-infos li m-khbiyyin */
-.brand-details {
-    margin-top: 25px;
-    opacity: 0;
-    transition: 0.3s;
-    display: none;
-}
-
-.brand-card.active .brand-details {
-    opacity: 1;
-    display: block;
-}
-
-.info-box { margin-bottom: 15px; }
-.info-box h4 { color: var(--primary-green); margin-bottom: 5px; }
-:root {
-    --primary-green: #2d4f32;
-    --m-red: #7a1f26;
-    --bg: #fdfaf5;
-}
-body { font-family: 'Montserrat', sans-serif; background: var(--bg); margin: 0; }
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-
-/* Navbar */
-.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05); sticky: top; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: white; sticky: top; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.logo-container { display: flex; align-items: center; gap: 10px; }
+.logo-icon { width: 40px; height: 40px; }
 .logo-text { font-family: 'Playfair Display'; font-size: 24px; font-weight: bold; }
-.m-red { color: var(--m-red); }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.btn-outline { border: 1px solid black; padding: 8px 15px; border-radius: 20px; text-decoration: none; color: black; font-size: 13px; }
+.m-burgundy { color: var(--burgundy); }
+.m-green { color: var(--green); }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #333; font-weight: 500; }
 
 /* Hero */
-.hero { height: 60vh; background: #1a261c; color: white; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero { height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; }
+.hero-content h1 { font-family: 'Playfair Display'; font-size: 3.5rem; margin-bottom: 20px; }
 
-/* Grid Categories */
-.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.cat-card { background: white; padding: 20px; border-radius: 15px; text-align: center; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
-.cat-card:hover { transform: translateY(-10px); }
-.img-container { height: 200px; overflow: hidden; border-radius: 10px; margin-bottom: 15px; }
+/* Category Cards */
+.category-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.cat-card { background: white; padding: 20px; border-radius: 20px; transition: 0.3s; text-align: center; }
+.img-container { height: 250px; border-radius: 15px; overflow: hidden; margin-bottom: 15px; }
 .img-container img { width: 100%; height: 100%; object-fit: cover; }
-.explorer-link { text-decoration: none; color: #666; font-size: 14px; display: block; margin-top: 10px; }
 
-/* Brand Card Expansion */
-.brand-card { background: white; border-radius: 12px; padding: 20px; margin-bottom: 15px; cursor: pointer; transition: 0.4s; overflow: hidden; max-height: 80px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.brand-card.active { max-height: 500px; border-left: 5px solid var(--primary-green); }
-.brand-header { display: flex; align-items: center; gap: 20px; position: relative; }
-.brand-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: cover; }
-.stars { color: #ffb400; font-size: 12px; }
-.brand-details { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; line-height: 1.6; }
-.arrow-icon { margin-left: auto; transition: 0.3s; }
-.brand-card.active .arrow-icon { transform: rotate(180deg); }
-/* Barre de marque plus grande au départ */
-.brand-card {
-    background: white;
-    border-radius: 16px;
-    padding: 25px 30px; /* Zedna l-padding */
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    overflow: hidden;
-    max-height: 110px; /* Kat-bda kbira chwiya (Logo i-ban mzyan) */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    border: 1px solid #f0f0f0;
-}
-
-.brand-card.active {
-    max-height: 1000px; /* Kat-kber bzzaf bach thiz storytelling ttwil */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-
-.brand-logo {
-    width: 65px; /* Logo kber */
-    height: 65px;
-    border-radius: 12px;
-    object-fit: cover;
-}
-
-/* Storytelling Layout */
-.story-section {
-    background: #fcf9f4;
-    padding: 20px;
-    border-radius: 12px;
-    margin: 20px 0;
-}
-
-.story-section h4 {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--primary-green);
-    margin-bottom: 10px;
-}
-
-.story-section p {
-    line-height: 1.8;
-    color: #444;
-    font-size: 15px;
-    text-align: justify;
-}
-
-/* Contact Modern Items */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 0 10px;
-}
-
-.contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 14px;
-}
-
-.contact-item i {
-    color: var(--m-red);
-    width: 18px;
-}
-
-.arrow-icon {
-    width: 24px;
-    height: 24px;
-    color: #ccc;
-    transition: 0.4s;
-}
-
-.brand-card.active .arrow-icon {
-    transform: rotate(180deg);
-    color: var(--primary-green);
-}
-/* Styling dial l-barre l-kbira li tlebty */
-.brand-card {
-    background: white;
-    border-radius: 16px;
-    padding: 25px 30px; 
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    overflow: hidden;
-    max-height: 110px; /* Kbira f l-wel kima tlebty */
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    border: 1px solid #f0f0f0;
-}
-
-.brand-card.active {
-    max-height: 1000px;
-}
-
+/* Brand Bars Expansion */
+.brand-card { background: white; border-radius: 16px; padding: 25px; margin-bottom: 20px; cursor: pointer; transition: 0.5s; overflow: hidden; max-height: 110px; border: 1px solid #eee; }
+.brand-card.active { max-height: 1200px; border-left: 6px solid var(--burgundy); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 .brand-header { display: flex; align-items: center; justify-content: space-between; }
-.brand-logo { width: 70px; height: 70px; border-radius: 12px; object-fit: cover; }
+.brand-logo { width: 70px; height: 70px; border-radius: 10px; object-fit: cover; }
 .brand-info { flex-grow: 1; margin-left: 20px; }
-.stars { color: #ffb400; font-size: 14px; }
-.story-section { background: #fcf9f4; padding: 20px; border-radius: 12px; margin: 20px 0; }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.contact-item { display: flex; align-items: center; gap: 10px; color: #555; }
+.stars { color: #ffb400; margin-top: 5px; }
+
+/* Storytelling Area */
+.story-section { background: #f9f4f4; padding: 25px; border-radius: 12px; margin: 25px 0; border-left: 4px solid var(--burgundy); }
+.story-section p { line-height: 1.8; font-size: 15px; text-align: justify; }
+
+/* Contact Section */
+.contact-box { background: var(--burgundy); color: white; padding: 50px; border-radius: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.contact-form input, .contact-form textarea { width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: none; }
+.btn-burgundy { background: white; color: var(--burgundy); padding: 12px 30px; border: none; border-radius: 25px; font-weight: bold; cursor: pointer; }
+
+.title-burgundy { color: var(--burgundy); font-family: 'Playfair Display'; font-size: 2.5rem; text-align: center; }
