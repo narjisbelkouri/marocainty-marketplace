@@ -141,7 +141,7 @@ body {
     padding: 15px 35px; border-radius: 30px; cursor: pointer;
 }
 
-/* 5. Categories */
+/* 5. Categories - FIN 9ADINA NOU.PNG */
 .section-title { text-align: center; margin-bottom: 50px; }
 .section-title h2 { font-family: 'Playfair Display', serif; font-size: 36px; }
 
@@ -152,13 +152,52 @@ body {
 }
 
 .cat-card {
-    background: white; padding: 20px; border-radius: 15px;
-    text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    background: white; 
+    padding: 20px; 
+    border-radius: 15px;
+    text-align: center; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease;
 }
 
-.img-container { height: 250px; overflow: hidden; border-radius: 10px; margin-bottom: 20px; }
-.img-container img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+.cat-card:hover {
+    transform: translateY(-10px); /* Katchtle' chwiya l-foug melli kaddir hover */
+}
+
+.img-container { 
+    height: 250px; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    margin-bottom: 20px;
+    background-color: #eee; /* Loun bach t-ban l-blassa ila matl3atch tswira */
+}
+
+.img-container img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; /* Hadi hiya l-mohimma bach tswira match-merch */
+    transition: 0.5s; 
+}
+
 .cat-card:hover img { transform: scale(1.1); }
+
+.cat-card h3 {
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.cat-card a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    border-bottom: 1px solid transparent;
+    transition: 0.3s;
+}
+
+.cat-card a:hover {
+    border-bottom: 1px solid var(--primary-green);
+}
 
 /* 6. About Section */
 .about-grid {
@@ -171,7 +210,7 @@ body {
 .about-list li { margin-bottom: 10px; font-weight: 600; color: var(--primary-green); }
 .about-image img { width: 100%; border-radius: 20px; box-shadow: 15px 15px 0px var(--primary-green); }
 
-/* 7. Contact Section (FIXED) */
+/* 7. Contact Section */
 .contact-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -188,20 +227,18 @@ body {
     gap: 15px;
 }
 
-/* Les boites blanches kima bghiti */
 .contact-form input, 
 .contact-form textarea {
     width: 100%;
     padding: 15px;
     border: none;
     border-radius: 8px;
-    background: white; /* Redinahom b l-byad */
-    color: var(--text-dark); /* Ktaba t-welli k-7la bach t-ban */
+    background: white; 
+    color: var(--text-dark); 
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
 
-/* Bach placeholder i-ban r-madi ghamq mzyan */
 .contact-form input::placeholder, 
 .contact-form textarea::placeholder {
     color: #666; 
@@ -230,7 +267,8 @@ body {
 
 /* 9. Responsive */
 @media (max-width: 768px) {
-    .navbar { flex-direction: column; gap: 15px; }
+    .navbar { flex-direction: column; gap: 15px; padding: 20px; }
+    .nav-links { gap: 15px; margin-bottom: 10px; }
     .hero h1 { font-size: 28px; }
     .hero-btns { flex-direction: column; }
     .about-grid, .contact-box { grid-template-columns: 1fr; padding: 25px; }
