@@ -43,3 +43,41 @@ document.querySelectorAll('a[href^="#"], #scroll-to-offres').forEach(element => 
         }
     });
 });
+// Data dial l-marques (Exemple)
+const database = {
+    nourriture: [
+        { name: "Atlas Oils", logo: "atlas.png", story: "Producteur d'huile d'olive bio...", loc: "Marrakech", contact: "05XX-XXXXXX" },
+        { name: "Miel du Souss", logo: "miel.png", story: "Miel pur artisanal...", loc: "Agadir", contact: "contact@miel.ma" }
+    ],
+    // Zid l-categories l-khorin hna...
+};
+
+// 1. Jbed l-category m l-URL
+const params = new URLSearchParams(window.location.search);
+const category = params.get('type');
+document.getElementById('category-title').innerText = category.charAt(0).toUpperCase() + category.slice(1);
+
+// 2. Affichi l-marques
+const list = document.getElementById('marques-list');
+database[category].forEach(brand => {
+    const card = document.createElement('div');
+    card.className = 'brand-card';
+    card.innerHTML = `
+        <div class="brand-header">
+            <img src="${brand.logo}" class="brand-logo">
+            <h3>${brand.name}</h3>
+        </div>
+        <div class="brand-details">
+            <div class="info-box"><h4>Storytelling</h4><p>${brand.story}</p></div>
+            <div class="info-box"><h4>Localisation</h4><p>${brand.loc}</p></div>
+            <div class="info-box"><h4>Contact</h4><p>${brand.contact}</p></div>
+        </div>
+    `;
+
+    // 3. Animation Click
+    card.addEventListener('click', () => {
+        card.classList.toggle('active');
+    });
+
+    list.appendChild(card);
+});
