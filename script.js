@@ -1,67 +1,113 @@
-AOS.init({ duration: 1000, once: true });
+// 1. Initialize Animations
+if (typeof AOS !== 'undefined') {
+    AOS.init({ duration: 1000, once: true });
+}
 
-// Typing Effect
+// 2. Typing Effect (Promotion Focus)
 if (document.getElementById('typing-text')) {
     new Typed('#typing-text', {
-        strings: ['Le rayonnement des marques locales.', 'L\'excellence du Made in Morocco.'],
-        typeSpeed: 50, backSpeed: 30, loop: true
+        strings: [
+            'Propulseur de marques locales marocaines.',
+            'La vitrine n°1 du savoir-faire marocain.',
+            'Célébrons l\'authenticité du Made in Morocco.',
+            'Donnez de la visibilité à votre marque.'
+        ],
+        typeSpeed: 60,
+        backSpeed: 40,
+        backDelay: 2500,
+        loop: true
     });
 }
 
-// Data Brands
+// 3. Navbar Styling on Scroll
+window.addEventListener('scroll', function() {
+    const nav = document.querySelector('.navbar');
+    if (nav) {
+        if (window.scrollY > 50) {
+            nav.style.padding = "10px 8%";
+            nav.style.boxShadow = "0 5px 15px rgba(0,0,0,0.1)";
+        } else {
+            nav.style.padding = "20px 8%";
+            nav.style.boxShadow = "none";
+        }
+    }
+});
+
+// 4. Smooth Scroll
+document.querySelectorAll('a[href^="#"], #scroll-to-offres').forEach(element => {
+    element.addEventListener('click', function (e) {
+        const targetId = this.getAttribute('href') || '#offres';
+        if (targetId.startsWith('#')) {
+            e.preventDefault();
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    });
+});
+
+// ==========================================
+// 5. GESTION DES MARQUES (PAGE CATÉGORIES)
+// ==========================================
 if (document.getElementById('marques-list')) {
     const database = {
-        nourriture: [{
-            name: "Amlou Prestige", logo: "nourr.png", stars: 5,
-            story: "Plongez dans l'excellence du Souss. Notre Amlou Prestige est une symphonie de saveurs où les amandes grillées à la perfection rencontrent l'huile d'argan bio la plus pure, sublimée par une touche de miel d'oranger. C'est le luxe du terroir marocain dans un pot.",
-            loc: "Agadir", contact: "contact@amlouprestige.ma"
-        }],
-        vetement: [{
-            name: "Diamantine", logo: "vett.webp", stars: 5, // .webp hna
-            story: "Diamantine réinvente le chic marocain. En fusionnant l'héritage du caftan avec les lignes contemporaines, la marque crée une mode audacieuse qui célèbre la femme marocaine moderne, fière de ses racines et tournée vers l'avenir.",
-            loc: "Casablanca", contact: "info@diamantine.com"
-        }],
-        cosmetique: [
-            { name: "Natus Marrakech", logo: "nat.webp", stars: 5, // .webp hna
-              story: "L'essence du spa traditionnel chez vous. Natus Marrakech transforme les rituels du hammam en soins de haute performance, utilisant les secrets ancestraux de la Rose et de l'Argan pour une beauté authentique et bio.", loc: "Marrakech", contact: "hello@natus.ma" },
-            { name: "BioProGreen", logo: "bio.png", stars: 4, 
-              story: "L'innovation verte par excellence. BioProGreen extrait la quintessence des plantes marocaines pour offrir des soins capillaires et cutanés d'une pureté inégalée, respectant votre peau et l'environnement.", loc: "Agadir", contact: "sales@bioprogreen.com" }
+        nourriture: [
+            { name: "Amlou Prestige", img: "nou.png", story: "Le meilleur de l'amandier marocain transformé en délice. Un mélange luxueux d'amandes grillées, d'huile d'argan bio et de miel pur.", loc: "Région du Souss", contact: "contact@amlouprestige.ma" }
         ],
-        decoration: [{
-            name: "Chabi Chic", logo: "ch.png", stars: 5,
-            story: "La céramique de Safi revisitée. Chabi Chic apporte une touche bohème et moderne à l'art de vivre marocain, transformant chaque objet du quotidien en une œuvre d'art design et colorée.",
-            loc: "Marrakech", contact: "store@chabi-chic.com"
-        }],
-        accessoire: [{
-            name: "Olga DSN", logo: "olga.webp", stars: 4, // .webp hna
-            story: "L'élégance du cuir entre vos mains. Olga DSN crée des accessoires de maroquinerie d'exception, où chaque couture raconte le dévouement des artisans marocains pour un luxe discret et intemporel.",
-            loc: "Rabat", contact: "contact@olgadsn.ma"
-        }]
+        vetement: [
+            { name: "Diamantine", img: "vett.webp", story: "La référence de la mode traditionnelle marocaine revisité. Des tuniques, caftans et accessoires inspirés de l'héritage marocain.", loc: "Casablanca", contact: "info@diamantine.com" }
+        ],
+        cosmetique: [
+            { name: "Natus Marrakech", img: "nat.webp", story: "Soins naturels inspirés des rituels ancestraux du hammam. Des produits bio à base d'argan et de figue de barbarie.", loc: "Marrakech", contact: "hello@natus.ma" },
+            { name: "BioProGeen", img: "bio.png", story: "L'innovation verte marocaine au service de la beauté. Des huiles essentielles et des soins 100% naturels.", loc: "Agadir", contact: "sales@bioprogreen.com" }
+        ],
+        decoration: [
+            { name: "Chabi Chic", img: "ch.png", story: "L'art de vivre marocain moderne. Céramiques faites main et décoration bohème chic pour un intérieur authentique.", loc: "Marrakech", contact: "store@chabi-chic.com" }
+        ],
+        accessoire: [
+            { name: "Olga DSN", img: "olga.webp", story: "Maroquinerie d'exception alliant design contemporain et savoir-faire artisanal marocain.", loc: "Rabat", contact: "contact@olgadsn.ma" }
+        ],
+        bijoux: [
+            { name: "Artisans du Sud", img: "bij.png", story: "Bijoux berbères revisités. Des pièces uniques en argent massif créées par les mains expertes des artisans de Tiznit.", loc: "Tiznit", contact: "bijoux@marocainty.ma" }
+        ]
     };
 
     const params = new URLSearchParams(window.location.search);
-    const type = (params.get('type') || 'nourriture').toLowerCase();
+    const type = params.get('type') || 'nourriture';
     
+    // Afficher le titre
+    document.getElementById('category-title').innerText = "Univers : " + type.toUpperCase();
+
     const list = document.getElementById('marques-list');
+    
     if (database[type]) {
-        document.getElementById('category-title').innerText = "Univers : " + type.toUpperCase();
         database[type].forEach(brand => {
-            const card = document.createElement('div');
-            card.className = 'brand-card';
-            card.innerHTML = `
+            const item = document.createElement('div');
+            item.className = 'brand-item';
+            item.innerHTML = `
                 <div class="brand-header">
-                    <img src="${brand.logo}" class="brand-logo" onerror="this.src='https://via.placeholder.com/70'">
-                    <div class="brand-info"><h3>${brand.name}</h3><div class="stars">★★★★★</div></div>
-                    <i data-lucide="chevron-down"></i>
+                    <img src="${brand.img}" onerror="this.src='https://via.placeholder.com/80'">
+                    <div>
+                        <h3>${brand.name}</h3>
+                        <p style="color:#777; font-size:14px;">📍 ${brand.loc}</p>
+                    </div>
                 </div>
-                <div class="brand-details">
-                    <div class="story-section"><h4>Storytelling</h4><p>${brand.story}</p></div>
-                    <p style="margin-top:10px;">📍 ${brand.loc} | 📧 ${brand.contact}</p>
+                <div class="brand-story">
+                    <p>${brand.story}</p>
+                    <p><span>Contact:</span> ${brand.contact}</p>
                 </div>
             `;
-            card.onclick = () => card.classList.toggle('active');
-            list.appendChild(card);
+            
+            // Toggle Story on Click
+            item.onclick = function() {
+                const story = this.querySelector('.brand-story');
+                story.style.display = story.style.display === 'block' ? 'none' : 'block';
+            };
+            
+            list.appendChild(item);
         });
-        lucide.createIcons();
+    } else {
+        list.innerHTML = "<p style='text-align:center;'>Aucune marque enregistrée pour le moment.</p>";
     }
 }
