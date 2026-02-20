@@ -6,10 +6,7 @@ if (typeof AOS !== 'undefined') {
 // Typing Effect
 if (document.getElementById('typing-text')) {
     new Typed('#typing-text', {
-        strings: ['Propulseur de marques locales marocaines.',
-            'La vitrine n°1 du savoir-faire marocain.',
-            'Célébrons l\'authenticité du Made in Morocco.',
-            'Donnez de la visibilité à votre marque.'],
+        strings: ['Propulseur de marques locales marocaines.', 'La vitrine n°1 du savoir-faire marocain.'],
         typeSpeed: 60, backSpeed: 40, loop: true
     });
 }
