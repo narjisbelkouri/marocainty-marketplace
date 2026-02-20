@@ -3,109 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Marques - MAROCAINTY</title>
+    <title>Marques - MAROCAINTY</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="categories-page">
 
     <nav class="navbar">
-        <a href="index.html" class="btn-outline">← Retour à l'accueil</a>
+        <a href="index.html" class="btn-outline">← Retour</a>
         <div class="logo-text">MAROCAINTY</div>
     </nav>
 
     <div class="container">
-        <h1 id="category-title" style="margin-bottom: 20px; font-family: 'Playfair Display'; color: var(--primary-green);"></h1>
-        <p id="category-desc" style="margin-bottom: 40px; color: #666;"></p>
+        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display';">Chargement...</h1>
         
-        <div id="marques-list" class="marques-grid">
-            </div>
+        <div id="marques-list" class="marques-grid"></div>
     </div>
 
-    <script>
-        // Data mn l-fichie Word dyalk [cite: 1, 2, 4, 6, 7, 8, 9]
-        const database = {
-            nourriture: {
-                title: "Art Gastronomique",
-                marques: [
-                    { name: "Amlou Prestige", logo: "nourr.png", stars: 5, story: "L'excellence de l'amandier marocain transformée en un délice tartinable de luxe.", loc: "Agadir / Souss", contact: "contact@amlouprestige.ma" }
-                ]
-            },
-            vetements: {
-                title: "Mode & Tradition",
-                marques: [
-                    { name: "Diamantine", logo: "vett.png", stars: 4, story: "La référence du prêt-à-porter traditionnel marocain revisité avec modernité.", loc: "Casablanca", contact: "info@diamantine.com" }
-                ]
-            },
-            cosmetiques: {
-                title: "Beauté Naturelle",
-                marques: [
-                    { name: "Natus Marrakech", logo: "nat.png", stars: 5, story: "Le secret des rituels du hammam transmis à travers des produits 100% bio.", loc: "Marrakech", contact: "hello@natus.ma" },
-                    { name: "BioProGreen", logo: "bio.png", stars: 4, story: "L'innovation verte au service de votre peau avec des huiles précieuses.", loc: "Agadir", contact: "sales@bioprogreen.com" }
-                ]
-            },
-            decoration: {
-                title: "Art de Vivre",
-                marques: [
-                    { name: "Chabi Chic", logo: "ch.png", stars: 5, story: "L'art de la table marocain avec une touche bohème et contemporaine.", loc: "Marrakech", contact: "store@chabi-chic.com" }
-                ]
-            },
-            accessoires: {
-                title: "Accessoires & Cuir",
-                marques: [
-                    { name: "Olga DSN", logo: "olga.png", stars: 4, story: "Créations originales alliant design moderne et artisanat de maroquinerie.", loc: "Rabat", contact: "contact@olgadsn.ma" }
-                ]
-            }
-        };
-
-        const params = new URLSearchParams(window.location.search);
-        const type = params.get('type') || 'nourriture';
-        const data = database[type];
-
-        document.getElementById('category-title').innerText = data.title;
-        const list = document.getElementById('marques-list');
-
-        data.marques.forEach(brand => {
-            const starHtml = '★'.repeat(brand.stars) + '☆'.repeat(5 - brand.stars);
-            const card = document.createElement('div');
-            card.className = 'brand-card';
-            card.innerHTML = `
-                <div class="brand-header">
-                    <img src="${brand.logo}" class="brand-logo" alt="${brand.name}">
-                    <div class="brand-title-group">
-                        <h3>${brand.name}</h3>
-                        <div class="stars">${starHtml}</div>
-                    </div>
-                    <span class="expand-icon">+</span>
-                </div>
-                <div class="brand-details">
-                    <hr style="margin: 15px 0; border: 0; border-top: 1px solid #eee;">
-                    <div class="info-box">
-                        <h4><span class="icon">📖</span> Storytelling</h4>
-                        <p>${brand.story}</p>
-                    </div>
-                    <div class="info-grid">
-                        <div class="info-box">
-                            <h4><span class="icon">📍</span> Localisation</h4>
-                            <p>${brand.loc}</p>
-                        </div>
-                        <div class="info-box">
-                            <h4><span class="icon">✉️</span> Contact</h4>
-                            <p>${brand.contact}</p>
-                        </div>
-                    </div>
-                    <button class="btn-green" style="margin-top: 10px; width: auto; padding: 10px 20px;">Visiter leur catalogue</button>
-                </div>
-            `;
-
-            card.addEventListener('click', () => {
-                const isActive = card.classList.contains('active');
-                document.querySelectorAll('.brand-card').forEach(c => c.classList.remove('active'));
-                if (!isActive) card.classList.add('active');
-            });
-
-            list.appendChild(card);
-        });
-    </script>
-</body>
+    <script src="marques-data.js"></script> <script src="categories-script.js"></script> </body>
 </html>
