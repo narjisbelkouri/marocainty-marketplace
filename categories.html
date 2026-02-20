@@ -3,22 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marques - MAROCAINTY</title>
+    <title>Nos Marques - MAROCAINTY</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body class="categories-page">
-
     <nav class="navbar">
         <a href="index.html" class="btn-outline">← Retour</a>
         <div class="logo-text">MAROCAINTY</div>
     </nav>
 
     <div class="container">
-        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display';">Chargement...</h1>
-        
+        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display'; color: #2d4f32;"></h1>
         <div id="marques-list" class="marques-grid"></div>
     </div>
 
-    <script src="marques-data.js"></script> <script src="categories-script.js"></script> </body>
+    <script>
+        const database = {
+            nourriture: [
+                { name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "L'excellence de l'amandier marocain transformée en un délice tartinable de luxe.", loc: "Agadir", contact: "contact@amlouprestige.ma" }
+            ],
+            vetements: [
+                { name: "Diamantine", img: "vett.png", stars: 4, story: "La référence du prêt-à-porter traditionnel marocain revisité avec modernité.", loc: "Casablanca", contact: "info@diamantine.com" }
+            ],
+            cosmetiques: [
+                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Le secret des rituels du hammam avec des produits 100% bio.", loc: "Marrakech", contact: "hello@natus.ma" },
+                { name: "BioProGreen", img: "bio.png", stars: 4, story: "L'innovation verte avec des huiles précieuses marocaines.", loc: "Agadir", contact: "sales@bioprogreen.com" }
+            ],
+            decoration: [
+                { name: "Chabi Chic", img: "ch.png", stars: 5, story: "L'art de la table marocain avec une touche bohème.", loc: "Marrakech", contact: "store@chabi-chic.com" }
+            ],
+            accessoires: [
+                { name: "Olga DSN", img: "olga.png", stars: 4, story: "Créations originales alliant design et maroquinerie.", loc: "Rabat", contact: "contact@olgadsn.ma" }
+            ],
+            bijoux: [
+                { name: "Bijoux Atlas", img: "bij.png", stars: 5, story: "L'éclat de l'artisanat berbère authentique.", loc: "Tiznit", contact: "atlas@bijoux.ma" }
+            ]
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const type = params.get('type') || 'nourriture';
+        document.getElementById('category-title').innerText = "Marques : " + type.charAt(0).toUpperCase() + type.slice(1);
+
+        const list = document.getElementById('marques-list');
+        database[type].forEach(brand => {
+            const card = document.createElement('div');
+            card.className = 'brand-card';
+            card.innerHTML = `
+                <div class="brand-header">
+                    <img src="${brand.img}" class="brand-logo">
+                    <div class="brand-info">
+                        <h3>${brand.name}</h3>
+                        <div class="stars">${'★'.repeat(brand.stars)}${'☆'.repeat(5-brand.stars)}</div>
+                    </div>
+                    <span class="arrow-icon">▼</span>
+                </div>
+                <div class="brand-details">
+                    <p><strong>📖 Histoire:</strong> ${brand.story}</p>
+                    <p><strong>📍 Ville:</strong> ${brand.loc}</p>
+                    <p><strong>✉️ Contact:</strong> ${brand.contact}</p>
+                </div>
+            `;
+            card.onclick = () => card.classList.toggle('active');
+            list.appendChild(card);
+        });
+    </script>
+</body>
 </html>
