@@ -97,3 +97,50 @@ body {
     .nav-links { display: none; }
 }
 footer { text-align: center; padding: 30px; background: #f0f0f0; margin-top: 40px; }
+.marques-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* L-barre dial l-marque f l-wel */
+.brand-card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); /* Animation smooth */
+    max-height: 80px; /* Ghir l-logo w l-ism f l-wel */
+}
+
+/* Melli kat-kber (Active) */
+.brand-card.active {
+    max-height: 600px; /* Kat-kber bach t-biyyen kolchi */
+    border-left: 5px solid var(--primary-green);
+}
+
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-logo { width: 50px; height: 50px; border-radius: 50%; object-fit: contain; }
+
+/* L-infos li m-khbiyyin */
+.brand-details {
+    margin-top: 25px;
+    opacity: 0;
+    transition: 0.3s;
+    display: none;
+}
+
+.brand-card.active .brand-details {
+    opacity: 1;
+    display: block;
+}
+
+.info-box { margin-bottom: 15px; }
+.info-box h4 { color: var(--primary-green); margin-bottom: 5px; }
