@@ -259,3 +259,28 @@ body { font-family: 'Montserrat', sans-serif; background: var(--bg); margin: 0; 
     transform: rotate(180deg);
     color: var(--primary-green);
 }
+/* Styling dial l-barre l-kbira li tlebty */
+.brand-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 30px; 
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    overflow: hidden;
+    max-height: 110px; /* Kbira f l-wel kima tlebty */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.brand-card.active {
+    max-height: 1000px;
+}
+
+.brand-header { display: flex; align-items: center; justify-content: space-between; }
+.brand-logo { width: 70px; height: 70px; border-radius: 12px; object-fit: cover; }
+.brand-info { flex-grow: 1; margin-left: 20px; }
+.stars { color: #ffb400; font-size: 14px; }
+.story-section { background: #fcf9f4; padding: 20px; border-radius: 12px; margin: 20px 0; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.contact-item { display: flex; align-items: center; gap: 10px; color: #555; }
