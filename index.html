@@ -3,22 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marques - MAROCAINTY</title>
-    <link rel="stylesheet" href="style.css">
+    <title>MAROCAINTY | Vitrine des Marques Marocaines</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="categories-page">
-
+<body>
     <nav class="navbar">
-        <a href="index.html" class="btn-outline">← Retour</a>
-        <div class="logo-text">MAROCAINTY</div>
+        <div class="logo-container">
+            <div class="logo-text"><span class="m-red">M</span>AROCAINTY</div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Accueil</a></li>
+            <li><a href="#offres">Catégories</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="btn-outline">Proposer une marque</button>
     </nav>
 
-    <div class="container">
-        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display';">Chargement...</h1>
-        
-        <div id="marques-list" class="marques-grid"></div>
-    </div>
+    <header class="hero" id="home">
+        <div class="hero-content">
+            <h1 id="typing-text"></h1>
+            <p>Le propulseur n°1 de la visibilité des marques locales.</p>
+        </div>
+    </header>
 
-    <script src="marques-data.js"></script> <script src="categories-script.js"></script> </body>
+    <section class="categories container" id="offres">
+        <div class="section-title">
+            <h2>Nos Secteurs d'Excellence</h2>
+        </div>
+        <div class="category-grid">
+            <div class="cat-card" data-aos="fade-up">
+                <div class="img-container"><img src="nou.png"></div>
+                <h3>Nourriture</h3>
+                <a href="categories.html?type=nourriture" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-container"><img src="n1.png"></div>
+                <h3>Vêtements</h3>
+                <a href="categories.html?type=vetements" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="img-container"><img src="cosm.png"></div>
+                <h3>Cosmétiques</h3>
+                <a href="categories.html?type=cosmetiques" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up">
+                <div class="img-container"><img src="dec.png"></div>
+                <h3>Décoration</h3>
+                <a href="categories.html?type=decoration" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="img-container"><img src="bij.png"></div>
+                <h3>Bijoux</h3>
+                <a href="categories.html?type=bijoux" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+            <div class="cat-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="img-container"><img src="acc.png"></div>
+                <h3>Accessoires</h3>
+                <a href="categories.html?type=accessoires" class="explorer-link">Explorer la catégorie →</a>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
