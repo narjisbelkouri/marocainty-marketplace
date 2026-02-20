@@ -9,75 +9,91 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="categories-page">
+
     <nav class="navbar">
         <a href="index.html" class="btn-outline">← Retour</a>
-        <div class="logo-text">MAROCAINTY</div>
+        <div class="logo-text" style="font-family: 'Playfair Display'; font-weight: bold; font-size: 24px;">
+            <span style="color: #7a1f26;">M</span><span style="color: #d67d45;">A</span><span style="color: #d67d45;">R</span><span style="color: #d67d45;">O</span><span style="color: #7c8d5c;">C</span><span style="color: #7c8d5c;">A</span><span style="color: #7c8d5c;">I</span><span style="color: #7c8d5c;">N</span><span style="color: #7c8d5c;">T</span><span style="color: #7c8d5c;">Y</span>
+        </div>
     </nav>
 
     <div class="container">
-        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display'; color: #2d4f32;"></h1>
-        <div id="marques-list" class="marques-grid"></div>
+        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display'; color: #2d4f32; text-align: center;"></h1>
+        <div id="marques-list" class="marques-grid">
+            </div>
     </div>
 
     <script>
+        // Data s77tha 3la 7sab l-Word dyalk bdbt
         const database = {
             nourriture: [
-                { name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "Plongez dans l'univers de l'excellence avec Amlou Prestige, où chaque pot raconte l'histoire du terroir du Souss. Notre amlou est conçu selon des méthodes ancestrales, utilisant des amandes grillées à point, de l'huile d'argan pure certifiée et du miel d'oranger sélectionné. C'est une expérience sensorielle unique qui allie luxe, santé et tradition marocaine authentique pour vos petits-déjeuners raffinés.", loc: "Agadir / Souss", contact: "contact@amlouprestige.ma" } [cite: 1, 2, 3]
+                { name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "Le meilleur de l'amandier marocain transformé en délice. Un mélange luxueux d'amandes, d'huile d'argan et de miel pur.", loc: "Agadir / Souss", contact: "contact@amlouprestige.ma" }
             ],
             vetements: [
-                { name: "Diamantine", img: "vett.png", stars: 4, story: "Diamantine incarne l'élégance du prêt-à-porter traditionnel marocain sur la scène internationale. En fusionnant les coupes classiques du kaftan et de la djellaba avec des tendances contemporaines, la marque offre des collections qui célèbrent la féminité et l'héritage. Chaque pièce est un hommage au travail minutieux des artisans, rendu accessible pour un quotidien moderne et stylé.", loc: "Casablanca", contact: "info@diamantine.com" } [cite: 4, 5]
+                { name: "Diamantine", img: "vett.png", stars: 5, story: "La référence de la mode traditionnelle marocaine. Des collections qui allient héritage et modernité.", loc: "Casablanca", contact: "info@diamantine.com" }
             ],
             cosmetiques: [
-                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Natus Marrakech est une invitation au voyage au cœur des rituels de beauté ancestraux. Spécialisée dans les soins naturels, la marque puise dans les richesses du sol marocain pour créer des élixirs de jeunesse. Du savon noir infusé aux huiles essentielles à l'argan pur, chaque produit est une promesse de bien-être et de pureté pour une peau éclatante de santé.", loc: "Marrakech", contact: "hello@natus.ma" }, [cite: 6, 7]
-                { name: "BioProGreen", img: "bio.png", stars: 4, story: "BioProGreen se positionne comme le leader de l'innovation cosmétique verte au Maroc. En mettant l'accent sur l'extraction éco-responsable, la marque propose des solutions de soins capillaires et cutanés basées sur la puissance des plantes. Une démarche éthique qui respecte l'environnement tout en offrant une efficacité professionnelle incomparable.", loc: "Agadir", contact: "sales@bioprogreen.com" } [cite: 8]
+                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Produits de beauté bio inspirés des rituels ancestraux du hammam.", loc: "Marrakech", contact: "hello@natus.ma" },
+                { name: "BioProGreen", img: "bio.png", stars: 4, story: "Spécialiste de l'innovation verte et des huiles essentielles marocaines.", loc: "Agadir", contact: "sales@bioprogreen.com" }
             ],
             decoration: [
-                { name: "Chabi Chic", img: "ch.png", stars: 5, story: "Chabi Chic revisite l'art de vivre marocain avec une touche de modernité irrésistible. Connue pour sa céramique peinte à la main et ses accessoires de maison bohème-chic, la marque transforme chaque objet du quotidien en une œuvre d'art. C'est le mélange parfait entre l'artisanat traditionnel de Safi et un design minimaliste qui s'adapte à tous les intérieurs du monde.", loc: "Marrakech", contact: "store@chabi-chic.com" } [cite: 8, 9]
+                { name: "Chabi Chic", img: "ch.png", stars: 5, story: "L'art de vivre marocain moderne. Céramiques et décoration bohème chic.", loc: "Marrakech", contact: "store@chabi-chic.com" }
             ],
             accessoires: [
-                { name: "Olga DSN", img: "olga.png", stars: 4, story: "Olga DSN est le fruit d'une passion pour la maroquinerie d'exception. Chaque sac et accessoire est dessiné avec une vision architecturale, utilisant les cuirs les plus fins traités par les maîtres tanneurs du pays. La marque s'adresse à ceux qui cherchent l'exclusivité et le détail parfait, créant des pièces intemporelles qui racontent l'histoire d'un luxe discret et raffiné.", loc: "Rabat", contact: "contact@olgadsn.ma" } [cite: 9]
+                { name: "Olga DSN", img: "olga.png", stars: 4, story: "Maroquinerie d'excellence alliant design contemporain et cuir de qualité.", loc: "Rabat", contact: "contact@olgadsn.ma" }
+            ],
+            bijoux: [
+                { name: "Artisans du Sud", img: "bij.png", stars: 5, story: "Bijoux traditionnels revisités pour l'élégance d'aujourd'hui.", loc: "Tiznit", contact: "bijoux@marocainty.ma" }
             ]
         };
 
+        // Script bach n-jbdou l-category mn l-URL
         const params = new URLSearchParams(window.location.search);
         const type = params.get('type') || 'nourriture';
-        document.getElementById('category-title').innerText = "Univers : " + type.charAt(0).toUpperCase() + type.slice(1); [cite: 1]
+        
+        // Affichage dial l-univer
+        document.getElementById('category-title').innerText = "Univers : " + type.toUpperCase();
 
         const list = document.getElementById('marques-list');
-        database[type].forEach(brand => {
-            const card = document.createElement('div');
-            card.className = 'brand-card';
-            card.innerHTML = `
-                <div class="brand-header">
-                    <img src="${brand.img}" class="brand-logo">
-                    <div class="brand-info">
-                        <h3>${brand.name}</h3>
-                        <div class="stars">${'★'.repeat(brand.stars)}${'☆'.repeat(5-brand.stars)}</div>
-                    </div>
-                    <i data-lucide="chevron-down" class="arrow-icon"></i>
-                </div>
-                <div class="brand-details">
-                    <div class="story-section">
-                        <h4><i data-lucide="book-open"></i> Notre Histoire</h4>
-                        <p>${brand.story}</p>
-                    </div>
-                    <div class="contact-grid">
-                        <div class="contact-item">
-                            <i data-lucide="map-pin"></i>
-                            <div><strong>Siège:</strong><br>${brand.loc}</div>
+        
+        // Vérification wach l-category kayna
+        if (database[type]) {
+            database[type].forEach(brand => {
+                const card = document.createElement('div');
+                card.className = 'brand-card';
+                card.innerHTML = `
+                    <div class="brand-header">
+                        <img src="${brand.img}" class="brand-logo" onerror="this.src='https://via.placeholder.com/65'">
+                        <div class="brand-info">
+                            <h3>${brand.name}</h3>
+                            <div class="stars">${'★'.repeat(brand.stars)}${'☆'.repeat(5-brand.stars)}</div>
                         </div>
-                        <div class="contact-item">
-                            <i data-lucide="mail"></i>
-                            <div><strong>Contact:</strong><br>${brand.contact}</div>
+                        <i data-lucide="chevron-down" class="arrow-icon"></i>
+                    </div>
+                    <div class="brand-details">
+                        <div class="story-section">
+                            <h4><i data-lucide="book-open"></i> Histoire de la marque</h4>
+                            <p>${brand.story}</p>
+                        </div>
+                        <div class="contact-grid">
+                            <div class="contact-item">
+                                <i data-lucide="map-pin"></i>
+                                <div><strong>Ville:</strong> ${brand.loc}</div>
+                            </div>
+                            <div class="contact-item">
+                                <i data-lucide="mail"></i>
+                                <div><strong>Email:</strong> ${brand.contact}</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            `;
-            card.onclick = () => card.classList.toggle('active');
-            list.appendChild(card);
-        });
-        // Initialiser les icones Lucide
-        lucide.createIcons();
+                `;
+                card.onclick = () => card.classList.toggle('active');
+                list.appendChild(card);
+            });
+            lucide.createIcons();
+        } else {
+            list.innerHTML = "<p style='text-align:center;'>Aucune marque trouvée pour cette catégorie.</p>";
+        }
     </script>
 </body>
 </html>
