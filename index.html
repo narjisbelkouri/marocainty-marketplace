@@ -4,21 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAROCAINTY | Vitrine Digitale</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
         <div class="logo-container">
+            <img src="logo-icon.png" alt="Logo" class="logo-icon">
             <div class="logo-text">
-                <span style="color: #7a1f26;">M</span><span style="color: #d67d45;">A</span><span style="color: #d67d45;">R</span><span style="color: #d67d45;">O</span><span style="color: #7c8d5c;">C</span><span style="color: #7c8d5c;">A</span><span style="color: #7c8d5c;">I</span><span style="color: #7c8d5c;">N</span><span style="color: #7c8d5c;">T</span><span style="color: #7c8d5c;">Y</span>
+                <span class="m-burgundy">M</span><span>A</span><span>R</span><span>O</span><span class="m-green">C</span><span>A</span><span>I</span><span>N</span><span>T</span><span>Y</span>
             </div>
         </div>
         <ul class="nav-links">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#offres">Catégories</a></li>
-            <li><a href="#propos">Notre Concept</a></li>
+            <li><a href="#propos">Concept</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <button class="btn-outline">Proposer une marque</button>
     </nav>
@@ -26,45 +28,36 @@
     <header class="hero" id="home" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.pinimg.com/736x/1b/2c/dd/1b2cdd333d3a8096dbadd43b675d0713.jpg'); background-size: cover; background-position: center;">
         <div class="hero-content" data-aos="fade-up">
             <h1 id="typing-text"></h1> 
-            <p>Le premier média digital dédié au rayonnement des marques locales marocaines.</p>
+            <p>Le premier média digital dédié exclusivement au rayonnement des marques locales.</p>
+            <button class="btn-white" id="scroll-to-offres">Explorer les marques</button>
         </div>
     </header>
 
     <section class="categories container" id="offres">
-        <div class="section-title">
-            <h2>Nos Secteurs d'Excellence</h2>
-        </div>
+        <div class="section-title"><h2>Les Secteurs d'Excellence</h2></div>
         <div class="category-grid">
-            <div class="cat-card">
-                <div class="img-container"><img src="nou.png"></div>
-                <h3>Nourriture</h3>
-                <a href="categories.html?type=nourriture" class="explorer-link">Explorer la catégorie →</a>
+            <div class="cat-card"><div class="img-container"><img src="nou.png"></div><h3>Nourriture</h3><a href="categories.html?type=nourriture" class="explorer-link">Explorer →</a></div>
+            <div class="cat-card"><div class="img-container"><img src="n1.png"></div><h3>Vêtements</h3><a href="categories.html?type=vetement" class="explorer-link">Explorer →</a></div>
+            <div class="cat-card"><div class="img-container"><img src="cosm.png"></div><h3>Cosmétiques</h3><a href="categories.html?type=cosmetique" class="explorer-link">Explorer →</a></div>
+            <div class="cat-card"><div class="img-container"><img src="dec.png"></div><h3>Décoration</h3><a href="categories.html?type=decoration" class="explorer-link">Explorer →</a></div>
+            <div class="cat-card"><div class="img-container"><img src="bij.png"></div><h3>Bijoux</h3><a href="categories.html?type=bijoux" class="explorer-link">Explorer →</a></div>
+            <div class="cat-card"><div class="img-container"><img src="acc.png"></div><h3>Accessoires</h3><a href="categories.html?type=accessoire" class="explorer-link">Explorer →</a></div>
+        </div>
+    </section>
+
+    <section class="contact container" id="contact" data-aos="fade-up">
+        <div class="contact-box">
+            <div class="contact-info">
+                <h2>Contactez-nous</h2>
+                <p>Une question ? Une marque à proposer ?</p>
+                <p>📧 partenariat@marocainty.ma</p>
             </div>
-            <div class="cat-card">
-                <div class="img-container"><img src="n1.png"></div>
-                <h3>Vêtements</h3>
-                <a href="categories.html?type=vetement" class="explorer-link">Explorer la catégorie →</a>
-            </div>
-            <div class="cat-card">
-                <div class="img-container"><img src="cosm.png"></div>
-                <h3>Cosmétiques</h3>
-                <a href="categories.html?type=cosmetique" class="explorer-link">Explorer la catégorie →</a>
-            </div>
-            <div class="cat-card">
-                <div class="img-container"><img src="dec.png"></div>
-                <h3>Décoration</h3>
-                <a href="categories.html?type=decoration" class="explorer-link">Explorer la catégorie →</a>
-            </div>
-            <div class="cat-card">
-                <div class="img-container"><img src="bij.png"></div>
-                <h3>Bijoux</h3>
-                <a href="categories.html?type=bijoux" class="explorer-link">Explorer la catégorie →</a>
-            </div>
-            <div class="cat-card">
-                <div class="img-container"><img src="acc.png"></div>
-                <h3>Accessoires</h3>
-                <a href="categories.html?type=accessoire" class="explorer-link">Explorer la catégorie →</a>
-            </div>
+            <form class="contact-form">
+                <input type="text" placeholder="Nom" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message..."></textarea>
+                <button type="submit" class="btn-burgundy">Envoyer</button>
+            </form>
         </div>
     </section>
 
