@@ -179,3 +179,83 @@ body { font-family: 'Montserrat', sans-serif; background: var(--bg); margin: 0; 
 .brand-details { margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee; font-size: 14px; line-height: 1.6; }
 .arrow-icon { margin-left: auto; transition: 0.3s; }
 .brand-card.active .arrow-icon { transform: rotate(180deg); }
+/* Barre de marque plus grande au départ */
+.brand-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px 30px; /* Zedna l-padding */
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+    max-height: 110px; /* Kat-bda kbira chwiya (Logo i-ban mzyan) */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border: 1px solid #f0f0f0;
+}
+
+.brand-card.active {
+    max-height: 1000px; /* Kat-kber bzzaf bach thiz storytelling ttwil */
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.brand-logo {
+    width: 65px; /* Logo kber */
+    height: 65px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+/* Storytelling Layout */
+.story-section {
+    background: #fcf9f4;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+
+.story-section h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary-green);
+    margin-bottom: 10px;
+}
+
+.story-section p {
+    line-height: 1.8;
+    color: #444;
+    font-size: 15px;
+    text-align: justify;
+}
+
+/* Contact Modern Items */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.contact-item i {
+    color: var(--m-red);
+    width: 18px;
+}
+
+.arrow-icon {
+    width: 24px;
+    height: 24px;
+    color: #ccc;
+    transition: 0.4s;
+}
+
+.brand-card.active .arrow-icon {
+    transform: rotate(180deg);
+    color: var(--primary-green);
+}
