@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nos Marques - MAROCAINTY</title>
+    <title>Marques - MAROCAINTY</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -19,44 +19,29 @@
 
     <div class="container">
         <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display'; color: #2d4f32; text-align: center;"></h1>
-        <div id="marques-list" class="marques-grid">
-            </div>
+        <div id="marques-list" class="marques-grid"></div>
     </div>
 
     <script>
-        // Data s77tha 3la 7sab l-Word dyalk bdbt
         const database = {
-            nourriture: [
-                { name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "Le meilleur de l'amandier marocain transformé en délice. Un mélange luxueux d'amandes, d'huile d'argan et de miel pur.", loc: "Agadir / Souss", contact: "contact@amlouprestige.ma" }
+            nourriture: [{ name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "L'excellence du terroir marocain. Un amlou premium préparé avec des amandes grillées, de l'huile d'argan bio et du miel pur. Une saveur authentique qui voyage du Souss directement à votre table.", loc: "Agadir", contact: "contact@amlouprestige.ma" }],
+            vetement: [{ name: "Diamantine", img: "vett.png", stars: 5, story: "Le leader de la mode traditionnelle marocaine. Des créations qui subliment le caftan et la djellaba pour la femme moderne.", loc: "Casablanca", contact: "info@diamantine.com" }],
+            cosmetique: [
+                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Rituels de bien-être ancestraux et soins naturels pour une peau éclatante.", loc: "Marrakech", contact: "hello@natus.ma" },
+                { name: "BioProGreen", img: "bio.png", stars: 4, story: "Innovation cosmétique à base d'huiles végétales marocaines 100% bio.", loc: "Agadir", contact: "sales@bioprogreen.com" }
             ],
-            vetements: [
-                { name: "Diamantine", img: "vett.png", stars: 5, story: "La référence de la mode traditionnelle marocaine. Des collections qui allient héritage et modernité.", loc: "Casablanca", contact: "info@diamantine.com" }
-            ],
-            cosmetiques: [
-                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Produits de beauté bio inspirés des rituels ancestraux du hammam.", loc: "Marrakech", contact: "hello@natus.ma" },
-                { name: "BioProGreen", img: "bio.png", stars: 4, story: "Spécialiste de l'innovation verte et des huiles essentielles marocaines.", loc: "Agadir", contact: "sales@bioprogreen.com" }
-            ],
-            decoration: [
-                { name: "Chabi Chic", img: "ch.png", stars: 5, story: "L'art de vivre marocain moderne. Céramiques et décoration bohème chic.", loc: "Marrakech", contact: "store@chabi-chic.com" }
-            ],
-            accessoires: [
-                { name: "Olga DSN", img: "olga.png", stars: 4, story: "Maroquinerie d'excellence alliant design contemporain et cuir de qualité.", loc: "Rabat", contact: "contact@olgadsn.ma" }
-            ],
-            bijoux: [
-                { name: "Artisans du Sud", img: "bij.png", stars: 5, story: "Bijoux traditionnels revisités pour l'élégance d'aujourd'hui.", loc: "Tiznit", contact: "bijoux@marocainty.ma" }
-            ]
+            decoration: [{ name: "Chabi Chic", img: "ch.png", stars: 5, story: "Art de la table et décoration marocaine moderne avec une touche bohème.", loc: "Marrakech", contact: "store@chabi-chic.com" }],
+            accessoire: [{ name: "Olga DSN", img: "olga.png", stars: 4, story: "Design contemporain et maroquinerie fine faite main par nos artisans.", loc: "Rabat", contact: "contact@olgadsn.ma" }],
+            bijoux: [{ name: "Artisans du Sud", img: "bij.png", stars: 5, story: "Bijoux traditionnels en argent et pierres naturelles.", loc: "Tiznit", contact: "bijoux@marocainty.ma" }]
         };
 
-        // Script bach n-jbdou l-category mn l-URL
         const params = new URLSearchParams(window.location.search);
-        const type = params.get('type') || 'nourriture';
+        // Hna khdmna b toLowerCase() bach y-t9ra kolchi sghir
+        const type = (params.get('type') || 'nourriture').toLowerCase();
         
-        // Affichage dial l-univer
         document.getElementById('category-title').innerText = "Univers : " + type.toUpperCase();
-
         const list = document.getElementById('marques-list');
-        
-        // Vérification wach l-category kayna
+
         if (database[type]) {
             database[type].forEach(brand => {
                 const card = document.createElement('div');
@@ -72,18 +57,12 @@
                     </div>
                     <div class="brand-details">
                         <div class="story-section">
-                            <h4><i data-lucide="book-open"></i> Histoire de la marque</h4>
+                            <h4><i data-lucide="book-open"></i> Storytelling</h4>
                             <p>${brand.story}</p>
                         </div>
                         <div class="contact-grid">
-                            <div class="contact-item">
-                                <i data-lucide="map-pin"></i>
-                                <div><strong>Ville:</strong> ${brand.loc}</div>
-                            </div>
-                            <div class="contact-item">
-                                <i data-lucide="mail"></i>
-                                <div><strong>Email:</strong> ${brand.contact}</div>
-                            </div>
+                            <div class="contact-item"><i data-lucide="map-pin"></i> <span>${brand.loc}</span></div>
+                            <div class="contact-item"><i data-lucide="mail"></i> <span>${brand.contact}</span></div>
                         </div>
                     </div>
                 `;
@@ -91,8 +70,6 @@
                 list.appendChild(card);
             });
             lucide.createIcons();
-        } else {
-            list.innerHTML = "<p style='text-align:center;'>Aucune marque trouvée pour cette catégorie.</p>";
         }
     </script>
 </body>
