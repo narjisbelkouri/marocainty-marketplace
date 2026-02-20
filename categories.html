@@ -9,68 +9,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body class="categories-page">
-
     <nav class="navbar">
         <a href="index.html" class="btn-outline">← Retour</a>
-        <div class="logo-text" style="font-family: 'Playfair Display'; font-weight: bold; font-size: 24px;">
-            <span style="color: #7a1f26;">M</span><span style="color: #d67d45;">A</span><span style="color: #d67d45;">R</span><span style="color: #d67d45;">O</span><span style="color: #7c8d5c;">C</span><span style="color: #7c8d5c;">A</span><span style="color: #7c8d5c;">I</span><span style="color: #7c8d5c;">N</span><span style="color: #7c8d5c;">T</span><span style="color: #7c8d5c;">Y</span>
+        <div class="logo-text">
+            <span class="m-burgundy">M</span>AROCAINTY
         </div>
     </nav>
-
     <div class="container">
-        <h1 id="category-title" style="margin-bottom: 40px; font-family: 'Playfair Display'; color: #2d4f32; text-align: center;"></h1>
+        <h1 id="category-title" class="title-burgundy"></h1>
         <div id="marques-list" class="marques-grid"></div>
     </div>
-
-    <script>
-        const database = {
-            nourriture: [{ name: "Amlou Prestige", img: "nourr.png", stars: 5, story: "L'excellence du terroir marocain. Un amlou premium préparé avec des amandes grillées, de l'huile d'argan bio et du miel pur. Une saveur authentique qui voyage du Souss directement à votre table.", loc: "Agadir", contact: "contact@amlouprestige.ma" }],
-            vetement: [{ name: "Diamantine", img: "vett.png", stars: 5, story: "Le leader de la mode traditionnelle marocaine. Des créations qui subliment le caftan et la djellaba pour la femme moderne.", loc: "Casablanca", contact: "info@diamantine.com" }],
-            cosmetique: [
-                { name: "Natus Marrakech", img: "nat.png", stars: 5, story: "Rituels de bien-être ancestraux et soins naturels pour une peau éclatante.", loc: "Marrakech", contact: "hello@natus.ma" },
-                { name: "BioProGreen", img: "bio.png", stars: 4, story: "Innovation cosmétique à base d'huiles végétales marocaines 100% bio.", loc: "Agadir", contact: "sales@bioprogreen.com" }
-            ],
-            decoration: [{ name: "Chabi Chic", img: "ch.png", stars: 5, story: "Art de la table et décoration marocaine moderne avec une touche bohème.", loc: "Marrakech", contact: "store@chabi-chic.com" }],
-            accessoire: [{ name: "Olga DSN", img: "olga.png", stars: 4, story: "Design contemporain et maroquinerie fine faite main par nos artisans.", loc: "Rabat", contact: "contact@olgadsn.ma" }],
-            bijoux: [{ name: "Artisans du Sud", img: "bij.png", stars: 5, story: "Bijoux traditionnels en argent et pierres naturelles.", loc: "Tiznit", contact: "bijoux@marocainty.ma" }]
-        };
-
-        const params = new URLSearchParams(window.location.search);
-        // Hna khdmna b toLowerCase() bach y-t9ra kolchi sghir
-        const type = (params.get('type') || 'nourriture').toLowerCase();
-        
-        document.getElementById('category-title').innerText = "Univers : " + type.toUpperCase();
-        const list = document.getElementById('marques-list');
-
-        if (database[type]) {
-            database[type].forEach(brand => {
-                const card = document.createElement('div');
-                card.className = 'brand-card';
-                card.innerHTML = `
-                    <div class="brand-header">
-                        <img src="${brand.img}" class="brand-logo" onerror="this.src='https://via.placeholder.com/65'">
-                        <div class="brand-info">
-                            <h3>${brand.name}</h3>
-                            <div class="stars">${'★'.repeat(brand.stars)}${'☆'.repeat(5-brand.stars)}</div>
-                        </div>
-                        <i data-lucide="chevron-down" class="arrow-icon"></i>
-                    </div>
-                    <div class="brand-details">
-                        <div class="story-section">
-                            <h4><i data-lucide="book-open"></i> Storytelling</h4>
-                            <p>${brand.story}</p>
-                        </div>
-                        <div class="contact-grid">
-                            <div class="contact-item"><i data-lucide="map-pin"></i> <span>${brand.loc}</span></div>
-                            <div class="contact-item"><i data-lucide="mail"></i> <span>${brand.contact}</span></div>
-                        </div>
-                    </div>
-                `;
-                card.onclick = () => card.classList.toggle('active');
-                list.appendChild(card);
-            });
-            lucide.createIcons();
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
